@@ -22,7 +22,7 @@ const Home = () => {
         <div className="mx-10 flex mt-0">
           <div className="basis-1/2 w-9/12 mx-auto items-start justify-center font-semibold flex flex-col px-12">
             <h1 className="text-5xl pb-12 leading-relaxed text-[#21811d] font-serif">
-            Coding Unlock Endless Possibilities! Explore Our Diverse Course
+              Coding Unlock Endless Possibilities! Explore Our Diverse Course
               Offerings{" "}
             </h1>
             <h1 className="text-2xl pl-1 pb-10 tracking-wide font-serif text-[#2e372e]">
@@ -30,13 +30,16 @@ const Home = () => {
             </h1>
 
             <div className="">
-              <button class="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
-                Enroll Now
-              </button>
-
-              <button class="bg-[#94d768] text-xl hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
-                Start Learning Today
-              </button>
+              <NavLink to="/courses">
+                <button class="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+                  Enroll Now
+                </button>
+              </NavLink>
+              <NavLink to="/courses">
+                <button class="bg-[#94d768] text-xl hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+                  Start Learning Today
+                </button>
+              </NavLink>
             </div>
           </div>
 
@@ -145,62 +148,6 @@ const Home = () => {
             <NavLink to="/courses">
               <div class="rounded-3xl relative group ">
                 <img
-                  src={require(`../assets/explore/web.png`)}
-                  alt=""
-                  className="rounded-3xl h-[450px] w-[350px]"
-                />
-                <div class="shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
-                  <div className="pt-6">
-                    <h1 className="py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center">
-                      Web Development
-                    </h1>
-                  </div>
-                </div>
-                <div class="shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
-                  <div className="pt-6">
-                    <h1 className="py-2 text-4xl font-bold font-serif">
-                      Web Development
-                    </h1>
-                    <h1 className="pt-4 text-left p-4">
-                      Become a Full-Stack Web Developer with just ONE course.
-                      HTML, CSS, Javascript, Node, React, PostgreSQL and DApps.
-                    </h1>
-                  </div>
-                </div>
-              </div>
-            </NavLink>
-
-            <NavLink to="/courses">
-              <div class="rounded-3xl relative group ">
-                <img
-                  src={require(`../assets/explore/data.png`)}
-                  alt=""
-                  className="rounded-3xl h-[450px] w-[350px]"
-                />
-                <div class="shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
-                  <div className="pt-6">
-                    <h1 className="py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center">
-                      Data Science
-                    </h1>
-                  </div>
-                </div>
-                <div class="shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
-                  <div className="pt-6">
-                    <h1 className="py-2 text-4xl font-bold font-serif">
-                      Data Science
-                    </h1>
-                    <h1 className="pt-4 text-left p-4">
-                      Complete Data Science Training: Math, Statistics, Python,
-                      Advanced Statistics in Python, Machine and Deep Learning.
-                    </h1>
-                  </div>
-                </div>
-              </div>
-            </NavLink>
-
-            <NavLink to="/courses">
-              <div class="rounded-3xl relative group ">
-                <img
                   src={require(`../assets/explore/python.png`)}
                   alt=""
                   className="rounded-3xl h-[450px] w-[350px]"
@@ -221,6 +168,69 @@ const Home = () => {
                       Learn Python like a Professional Start from the basics and
                       go all the way to creating your own applications and
                       games.
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </NavLink>
+
+            <NavLink to="/courses">
+              <div class="rounded-3xl relative group ">
+                <img
+                  src={require(`../assets/explore/web.png`)}
+                  alt=""
+                  className="rounded-3xl h-[450px] w-[350px]"
+                />
+                <div class="shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
+                  <div className="pt-6">
+                    <h1 className="py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center">
+                      Algorithms*
+                    </h1>
+                  </div>
+                </div>
+                <div class="shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
+                  <div className="pt-6">
+                    <h1 className="py-2 text-4xl font-bold font-serif">
+                      Algorithms
+                    </h1>
+                    <h1 className="pt-4 text-left p-4">
+                      Learning about algorithms can be important in the fields
+                      of computer engineering, machine learning, and artificial
+                      intelligence.
+                    </h1>
+                    <h1 className="font-extrabold text-center text-2xl text-[#21811d]">
+                      * Coming Soon on Happy Programming
+                    </h1>
+                  </div>
+                </div>
+              </div>
+            </NavLink>
+
+            <NavLink to="/courses">
+              <div class="rounded-3xl relative group ">
+                <img
+                  src={require(`../assets/explore/data.png`)}
+                  alt=""
+                  className="rounded-3xl h-[450px] w-[350px]"
+                />
+                <div class="shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
+                  <div className="pt-6">
+                    <h1 className="py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center">
+                      Data Science*
+                    </h1>
+                  </div>
+                </div>
+                <div class="shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
+                  <div className="pt-6">
+                    <h1 className="py-2 text-4xl font-bold font-serif">
+                      Data Science
+                    </h1>
+                    <h1 className="pt-4 text-left p-4">
+                      Complete Data Science Training: Math, Statistics, Python,
+                      Advanced Statistics in Python, Machine and Deep Learning.
+                    </h1>
+                    <h1 className="font-extrabold text-center text-2xl text-[#21811d]">
+                      * Coming Soon on Happy Programming
                     </h1>
                   </div>
                 </div>
@@ -254,7 +264,7 @@ const Home = () => {
           ></iframe>
 
           <h1 className="text-center pt-6 text-2xl font-bold font-serif text-[#21811d]">
-          Previous Students Report
+            Previous Students Report
           </h1>
         </div>
 

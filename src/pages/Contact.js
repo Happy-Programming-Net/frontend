@@ -48,7 +48,7 @@ const Contact = () => {
                         Our Address
                       </h3>
                       <p class="text-gray-600 ">
-                      Longfellow Middle School, Falls Church
+                      Near Longfellow Middle School, Falls Church
                       </p>
                       <p class="text-gray-700 ">VA, 22043</p>
                     </div>
@@ -103,10 +103,10 @@ const Contact = () => {
                         Working hours
                       </h3>
                       <p class="text-gray-700 ">
-                        Monday - Friday: 08:00 - 17:00
+                        Monday - Saturday: 13:00 - 18:00 EST
                       </p>
                       <p class="text-gray-700 ">
-                        Saturday &amp; Sunday: 08:00 - 12:00
+                        Sunday : Closed
                       </p>
                     </div>
                   </li>

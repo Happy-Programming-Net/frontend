@@ -52,18 +52,18 @@ const CourseCard3 = (props) => {
                   class="text-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
                   href="#0"
                 >
-                  2024 Summer <span className="text-[#37ae33]">Python{" "}</span> <span className="underline underline-offset-2">Online Class</span> (7-9th grade)
+                  2024 Summer <span className="text-[#37ae33]">Python + AI{" "}</span> <span className="underline underline-offset-2">Online Class</span> (7-9th grade)
                 </a>
               </h2>
             </header>
             <div className="flex pt-2">
               
-              <h1 className=" pl-2 font-serif text-lg">You'll learn the main programming concepts and all Python basics needed to get a good taste of this programming language. </h1>
+              <h1 className=" pl-2 font-serif text-lg">Level 1 covers main concepts, basics and functions. Level 2 adds comprehensive understanding, debugging, scientific packages, and simple project design. </h1>
             </div>
           </div>
-          <div class="flex justify-center space-x-2">
+          <div className="flex justify-center space-x-2 py-2">
             <button
-              class="text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
+              className="text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
               onClick={openModal}
             >
               Know More
@@ -83,7 +83,7 @@ const CourseCard3 = (props) => {
             className="text-2xl h-[750px] w-[1300px] rounded-3xl pt-6 overflow-y-auto ttt"
           >
             <h1 className="text-center text-4xl text-[#21811d] font-bold font-mono uppercase">
-            2024 Summer Python Online Class (7-9th grade)
+            2024 Summer <span className="underline underline-offset-4">Python + AI</span> Online Class (7-9th grade)
             </h1>
             <div className="overflow-y-auto ttt">
               <div className="flex text-center mt-8 pb-2">
@@ -116,12 +116,7 @@ const CourseCard3 = (props) => {
                       Course Description
                     </h1>
                     <p className="text-base font-serif pt-3 text-justify text-gray-700">
-                      You'll learn the main programming concepts and all Python
-                      basics needed to get a good taste of this programming
-                      language. This course will guide you on your path of
-                      mastering Python, one of the much-in-demand languages in
-                      today's environment. You will be able to develop your own
-                      python projects.
+                    The Python Beginner 1 course covers Python basics, the main function, running small functions, and simple visualizations. Python Beginner 2 builds on this, offering comprehensive Python understanding, debugging skills, scientific packages, and designing simple projects. Together, these levels equip learners with essential and advanced Python programming skills for various applications.
                     </p>
                   </div>
 
@@ -189,15 +184,15 @@ const CourseCard3 = (props) => {
                 <h1 className="font-bold text-2xl text-[#21811d]">
                   Course Details
                 </h1>
-                <div className="w-2/4 mx-auto text-lg font-semibold text-start text-gray-400 font-serif pt-4 pb-8">
+                <div className="w-2/4 mx-auto text-lg font-semibold text-start text-gray-600 font-serif pt-4 pb-8">
                   <ol className="list-decimal">
                     <li>
                       Early bird will get $50 off, if register by 4/1/2024.
                     </li>
-                    <li>Sibling or multiple registration group discount: </li>
-                    <ul className="list-disc">
-                      <li>2 students: $50 off.</li>
-                      <li> 3+ students: $100 off</li>
+                    <li className="text-[#21811d]">Sibling or multiple registration group discount: </li>
+                    <ul className="list-disc text-[#21811d]">
+                      <li>2 students: $25 off.</li>
+                      <li> 3+ students: $50 off</li>
                     </ul>
                     <li>
                       {" "}

@@ -81,6 +81,7 @@ const NavBar = () => {
 
                   <NavLink to="/logout" className="cursor-logo">
                     <button
+                    
                       className="mr-8 ml-3 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-8 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
                       onClick={logOut}
                     >
@@ -89,11 +90,11 @@ const NavBar = () => {
                   </NavLink>
                 </>
               ) : (
-                <NavLink to="/login" className="cursor-logo">
-                  <button className="mr-8 ml-8 bg-[#94d768] text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-8 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+                // <NavLink to="/login" className="cursor-not-allowed">
+                  <button disabled className="mr-8 ml-8 bg-[#94d768] text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-8 border-2 border-[#1f901c] rounded-full font-mono font-extrabold cursor-not-allowed">
                     Login
                   </button>
-                </NavLink>
+              // </NavLink>
               )}
             </div>
           </div>

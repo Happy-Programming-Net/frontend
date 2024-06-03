@@ -11,30 +11,30 @@ const Carousel = () => {
             className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           >
             <img
-              src={require('../assets/carousel/c1.png')}
-              className="block w-full h-[600px] rounded-3xl"
+              src={require('../assets/carousel/aipy.png')}
+              className="block w-full h-[500px] rounded-3xl"
               alt="..."
             />
-            <div className="absolute inset-x-[15%] bottom-16 hidden py-5 text-center text-white md:block bg-slate-100 rounded-2xl">
+            {/* <div className="absolute inset-x-[15%] bottom-16 hidden py-5 text-center text-white md:block bg-slate-100 rounded-2xl">
               <h5 className="text-6xl font-bold font-serif text-black">First slide label</h5>
               <p className="text-2xl text-black font-serif pt-3">
                 Some representative placeholder content for the first slide.
               </p>
-            </div>
+            </div> */}
           </TECarouselItem>
           <TECarouselItem
             itemID={2}
             className="relative float-left hidden -mr-[100%] w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           >
             <img
-              src={require('../assets/carousel/c2.png')}
-              className="block w-full h-[600px] rounded-3xl"
+              src={require('../assets/carousel/aipy4.png')}
+              className="block w-full h-[500px] rounded-3xl"
               alt="..."
             />
-            <div className="absolute inset-x-[15%] bottom-16 hidden py-5 text-center text-white md:block bg-slate-100 rounded-2xl">
-              <h5 className="text-6xl font-bold font-serif text-black">Second slide label</h5>
+            <div className="absolute inset-x-[15%] bottom-16 hidden py-5 text-center text-white md:block bg-[rgba(241,245,249,1)] rounded-2xl">
+              <h5 className="text-6xl font-bold font-serif text-black">Code Math</h5>
               <p className="text-2xl text-black font-serif pt-3">
-                Some representative placeholder content for the second slide.
+              Fun and interactive lessons blend math concepts with coding challenges
               </p>
             </div>
           </TECarouselItem>
@@ -43,14 +43,14 @@ const Carousel = () => {
             className="relative float-left -mr-[100%] hidden w-full transition-transform duration-[600ms] ease-in-out motion-reduce:transition-none"
           >
             <img
-              src={require('../assets/carousel/c3.png')}
-              className="block w-full h-[600px] rounded-3xl"
+              src={require('../assets/carousel/aipy2.png')}
+              className="block w-full h-[500px] rounded-3xl"
               alt="..."
             />
             <div className="absolute inset-x-[15%] bottom-16 hidden py-5 text-center text-white md:block bg-slate-100 rounded-2xl">
-              <h5 className="text-6xl font-bold font-serif text-black">Third slide label</h5>
+              <h5 className="text-6xl font-bold font-serif text-black">Python + AI Programming</h5>
               <p className="text-2xl text-black font-serif pt-3">
-                Some representative placeholder content for the Third slide.
+              Experience with the latest Al advancement and research by PHDs
               </p>
             </div>
           </TECarouselItem>

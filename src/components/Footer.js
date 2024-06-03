@@ -61,7 +61,7 @@ const Footer = () => {
                 title="Our address"
                 className="transition-colors duration-300 text-deep-purple-accent-400 hover:text-deep-purple-800 underline underline-offset-2"
               >
-                Longfellow Middle School, Falls Church, VA 22043
+                Near Longfellow Middle School, Falls Church, VA 22043
               </a>
             </div>
           </div>
