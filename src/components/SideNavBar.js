@@ -19,20 +19,18 @@ const SideNavbar = () => {
         exit={{ opacity: 0 }}
         className="flex flex-col items-center text-center justify-evenly shadow-xl bg-white max-h-screen min-h-screen rounded-tr-[50px]"
       >
-        <div className="flex justify-center flex-col items-center">
-          <NavLink to="/">
+        <NavLink to="/">
+          <div className="flex justify-center flex-col items-center">
             <img
               src={require(`../assets/logo/logo.png`)}
               alt=""
               className="h-28"
             />
-          </NavLink>
-
-          <h1 className="pt-5 text-xl font-serif font-bold">
-            Happy <br /> Programming
-          </h1>
-        </div>
-
+            <h1 className="pt-5 text-[23px] font-serif font-bold text-[#21811d]">
+              Happy <br /> Programming
+            </h1>
+          </div>
+        </NavLink>
         <NavLink to="/" className="cursor-logo">
           {location.pathname === "/" ? (
             <div className="flex items-center">
@@ -98,9 +96,7 @@ const SideNavbar = () => {
               <div className="flex items-center">
                 <div className="bg-[#94d768] flex flex-col justify-center text-center items-center p-3 border rounded-3xl h-32 w-28">
                   <PlusIcon className="h-12 w-12 text-[#7dce47] bg-[#ffffff85] rounded-full p-2" />
-                  <h1 className="pt-1 text-[#21811d] font-extrabold">
-                    Create
-                  </h1>
+                  <h1 className="pt-1 text-[#21811d] font-extrabold">Create</h1>
                 </div>
                 <div className="relative right-3">
                   <div className="h-5 w-5 bg-[#94d768] rounded-sm rotate-45"></div>
