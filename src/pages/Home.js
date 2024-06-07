@@ -19,17 +19,24 @@ const Home = () => {
     <>
       <div className="ttt overflow min-h-screen max-h-screen overflow-y-auto pb-20">
         <Carousel />
-        <div className="mx-10 flex mt-0">
-          <div className="basis-1/2 w-9/12 mx-auto items-start justify-center font-semibold flex flex-col px-12">
-            <h1 className="text-5xl pb-12 leading-relaxed text-[#21811d] font-serif">
+        <div className="md:mx-10 flex md:flex-row flex-col mt-0">
+          <div className="basis-1/2 w-11/12 md:w-9/12 mx-auto items-start justify-center font-semibold flex flex-col md:px-12">
+            <h1 className="hidden md:block pt-5 text-center md:text-left md:pt-0 md:text-5xl sm:text-3xl pb-12 leading-relaxed text-[#21811d] font-serif">
               Coding Unlock Endless Possibilities! Explore Our Diverse Course
               Offerings{" "}
             </h1>
-            <h1 className="text-2xl pl-1 pb-10 tracking-wide font-serif text-[#2e372e]">
+            <h1 className="md:hidden pt-5 text-center md:text-left md:pt-0 text-4xl pb-6 leading-relaxed text-[#21811d] font-serif">
+              Coding Unlock Endless Possibilities! Explore Our Diverse Course
+              Offerings{" "}
+            </h1>
+            <h1 className="hidden md:block text-2xl pl-1 pb-10 tracking-wide font-serif text-[#2e372e]">
+              Elevate Your Learning Experience with Us
+            </h1>
+            <h1 className="md:hidden text-xl pl-1 pb-5 tracking-wide font-serif text-[#2e372e]">
               Elevate Your Learning Experience with Us
             </h1>
 
-            <div className="">
+            <div className="hidden md:block">
               <NavLink to="/courses">
                 <button class="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                   Enroll Now
@@ -41,14 +48,40 @@ const Home = () => {
                 </button>
               </NavLink>
             </div>
+
+            <div className="md:hidden">
+              <NavLink to="/courses">
+                <button class="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+                  Enroll Now
+                </button>
+              </NavLink>
+              <NavLink to="/courses">
+                <button class="bg-[#94d768] text-xl hover:bg-[#94d76800] mt-4 text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+                  Start Learning Today
+                </button>
+              </NavLink>
+            </div>
           </div>
 
-          <div className="basis-1/2">
+          <div className="hidden md:block basis-1/2">
             <dotlottie-player
               src="https://lottie.host/7b664009-102e-4453-ab59-017dc0496fd8/8XMVNVDpVw.json"
               background="transparent"
               speed="1"
               style={{ width: "800px", height: "700px", paddingTop: "80px" }}
+              direction="1"
+              playMode="normal"
+              loop
+              autoplay
+            ></dotlottie-player>
+          </div>
+
+          <div className="md:hidden basis-1/2">
+            <dotlottie-player
+              src="https://lottie.host/7b664009-102e-4453-ab59-017dc0496fd8/8XMVNVDpVw.json"
+              background="transparent"
+              speed="1"
+              style={{ height: "350px", paddingTop: "0" }}
               direction="1"
               playMode="normal"
               loop
@@ -80,9 +113,9 @@ const Home = () => {
             </h1>
           </div>
 
-          <div className="flex justify-evenly">
-            <div className="h-96 w-96 bg-white rounded-2xl p-4 shadow-lg hover:shadow-2xl">
-              <figure class="rounded-2xl h-96 w-96 bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
+          <div className="flex md:flex-row flex-col justify-evenly items-center">
+            <div className="md:h-96 w-96 md:bg-white rounded-2xl p-4 md:shadow-lg md:hover:shadow-2xl md:mb-0">
+              <figure class="rounded-2xl md:h-96 md:w-96 bg-white p-6 md:shadow-lg ring-1 ring-gray-900/5">
                 <UserIcon className="h-24 w-24 text-[#7dce47] bg-[#ffffff85] rounded-full p-2" />
                 <h1 className="p-2 text-2xl font-bold font-serif">
                   Small Classroom Setting
@@ -97,14 +130,15 @@ const Home = () => {
                 </blockquote>
               </figure>
             </div>
-            <div className="h-96 w-96 bg-white rounded-2xl p-4 shadow-lg hover:shadow-2xl">
-              <figure class="rounded-2xl h-96 w-96 bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
+
+            <div className="md:h-96 w-96 md:bg-white rounded-2xl p-4 md:shadow-lg md:hover:shadow-2xl md:mb-0">
+              <figure class="rounded-2xl md:h-96 md:w-96 bg-white p-6 md:shadow-lg ring-1 ring-gray-900/5">
                 <CommandLineIcon className="h-24 w-24 text-[#7dce47] bg-[#ffffff85] rounded-full p-2" />
                 <h1 className="p-2 text-2xl font-bold font-serif">
                   Beginner-Friendly Classroom Environment
                 </h1>
                 <blockquote class="text-gray-900 p-2">
-                  <p className="text-lg font-serif font-medium ">
+                  <p className="text-lg font-serif font-medium">
                     Experienced educators and software developers create an
                     interactive, beginner-friendly environment that fosters
                     hands-on learning and practical skill development.
@@ -113,8 +147,8 @@ const Home = () => {
               </figure>
             </div>
 
-            <div className="h-96 w-96 bg-white rounded-2xl p-4 shadow-lg hover:shadow-2xl">
-              <figure class="rounded-2xl h-96 w-96 bg-white p-6 shadow-lg ring-1 ring-gray-900/5">
+            <div className="md:h-96 w-96 md:bg-white rounded-2xl p-4 md:shadow-lg md:hover:shadow-2xl md:mb-0">
+              <figure class="rounded-2xl md:h-96 md:w-96 bg-white p-6 md:shadow-lg ring-1 ring-gray-900/5">
                 <AcademicCapIcon className="h-24 w-24 text-[#7dce47] bg-[#ffffff85] rounded-full p-2" />
                 <h1 className="p-2 text-2xl font-bold font-serif">
                   Bridging Academia with Industry
@@ -131,7 +165,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="pt-24">
+        <div className="pt-12 md:pt-24">
           <div className="flex flex-col items-center ">
             <span className="text-[#94d7685b] ">
               <FontAwesomeIcon
@@ -139,27 +173,31 @@ const Home = () => {
                 className="md:text-[220px] text-[170px]"
               />
             </span>
-            <p className="text-[#21811d] md:text-7xl text-5xl font-extrabold font-serif relative top-[-100px] md:top-[-140px]">
+            <p className="hidden md:block text-[#21811d] md:text-7xl text-5xl font-extrabold font-serif relative top-[-100px] md:top-[-140px]">
+              Explore Our Courses
+            </p>
+
+            <p className="md:hidden text-[#21811d] md:text-7xl text-4xl font-extrabold font-serif relative top-[-100px] md:top-[-140px]">
               Explore Our Courses
             </p>
           </div>
 
-          <div className="flex justify-evenly">
+          <div className="flex md:flex-row flex-col justify-evenly items-center">
             <NavLink to="/courses">
-              <div class="rounded-3xl relative group ">
+              <div class="rounded-3xl relative group w-[350px] mb-12 md:mb-0">
                 <img
                   src={require(`../assets/explore/python.png`)}
                   alt=""
                   className="rounded-3xl h-[450px] w-[350px]"
                 />
-                <div class="shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
+                <div class="md:shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
                   <div className="pt-6">
                     <h1 className="py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center">
                       Python
                     </h1>
                   </div>
                 </div>
-                <div class="shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
+                <div className="md:shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
                   <div className="pt-6">
                     <h1 className="py-2 text-4xl font-bold font-serif">
                       Python
@@ -175,7 +213,7 @@ const Home = () => {
             </NavLink>
 
             <NavLink to="/courses">
-              <div class="rounded-3xl relative group ">
+              <div class="rounded-3xl relative group w-[350px] mb-12 md:mb-0">
                 <img
                   src={require(`../assets/explore/web.png`)}
                   alt=""
@@ -207,7 +245,7 @@ const Home = () => {
             </NavLink>
 
             <NavLink to="/courses">
-              <div class="rounded-3xl relative group ">
+              <div class="rounded-3xl relative group w-[350px] mb-12 md:mb-0">
                 <img
                   src={require(`../assets/explore/data.png`)}
                   alt=""
@@ -239,7 +277,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="pt-24">
+        <div className="pt-8 md:pt-24">
           <div className="flex flex-col items-center ">
             <span className="text-[#94d7685b] ">
               <FontAwesomeIcon
@@ -247,7 +285,10 @@ const Home = () => {
                 className="md:text-[220px] text-[170px]"
               />
             </span>
-            <p className="text-[#21811d] md:text-7xl text-5xl font-extrabold font-serif relative top-[-100px] md:top-[-140px]">
+            <p className="hidden md:block text-[#21811d] md:text-7xl text-5xl font-extrabold font-serif relative top-[-100px] md:top-[-140px]">
+              Student Projects
+            </p>
+            <p className="md:hidden text-[#21811d] md:text-7xl text-4xl font-extrabold font-serif relative top-[-100px] md:top-[-140px]">
               Student Projects
             </p>
           </div>
@@ -260,7 +301,18 @@ const Home = () => {
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
             referrerpolicy="strict-origin-when-cross-origin"
-            className="rounded-2xl mx-auto"
+            className="hidden md:block rounded-2xl mx-auto md:h-[450px] md:w-[750px]"
+          ></iframe>
+
+          <iframe
+            width="750"
+            height="450"
+            src="https://www.youtube.com/embed/nI9qusVo4lA?si=SIfyPLS4b63QSG7x"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
+            referrerpolicy="strict-origin-when-cross-origin"
+            className="md:hidden rounded-lg md:rounded-2xl mx-auto h-[250px] w-[400px]"
           ></iframe>
 
           <h1 className="text-center pt-6 text-2xl font-bold font-serif text-[#21811d]">
