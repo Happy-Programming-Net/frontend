@@ -6,7 +6,6 @@ import {
 } from "@heroicons/react/24/solid";
 import Modal from "react-modal";
 
-
 const customStyles = {
   content: {
     top: "50%",
@@ -36,7 +35,7 @@ const CourseCard3 = (props) => {
 
   return (
     <>
-      <div class="flex flex-col h-[490px] w-96 border-[3px] border-[#21851d31] rounded-3xlshadow shadow-slate-950/5 rounded-2xl overflow-hidden">
+      <div class="flex flex-col h-[520px] w-96 border-[3px] border-[#21851d31] rounded-3xlshadow shadow-slate-950/5 rounded-2xl overflow-hidden">
         <img
           class="object-cover h-48 w-full"
           src={require("../assets/courses/py2.png")}
@@ -52,13 +51,21 @@ const CourseCard3 = (props) => {
                   class="text-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
                   href="#0"
                 >
-                  2024 Summer <span className="text-[#37ae33]">Python + AI{" "}</span> <span className="underline underline-offset-2">Online Class</span> (7-9th grade)
+                  2024 Summer{" "}
+                  <span className="text-[#37ae33]">Python + AI </span>{" "}
+                  <span className="underline underline-offset-2">
+                    Online Class
+                  </span>{" "}
+                  (7-9th grade)
                 </a>
               </h2>
             </header>
             <div className="flex pt-2">
-              
-              <h1 className=" pl-2 font-serif text-lg">Level 1 covers main concepts, basics and functions. Level 2 adds comprehensive understanding, debugging, scientific packages, and simple project design. </h1>
+              <h1 className=" pl-2 font-serif text-lg">
+                Level 1 covers main concepts, basics and functions. Level 2 adds
+                comprehensive understanding, debugging, scientific packages, and
+                simple project design.{" "}
+              </h1>
             </div>
           </div>
           <div className="flex justify-center space-x-2 py-2">
@@ -80,26 +87,32 @@ const CourseCard3 = (props) => {
         >
           <div
             ref={(_subtitle) => (subtitle = _subtitle)}
-            className="text-2xl h-[750px] w-[1300px] rounded-3xl pt-6 overflow-y-auto ttt"
+            className="text-2xl md:h-[750px] md:w-[1300px] h-[650px] w-[350px] rounded-3xl overflow-y-auto ttt z-50"
           >
-            <h1 className="text-center text-4xl text-[#21811d] font-bold font-mono uppercase">
-            2024 Summer <span className="underline underline-offset-4">Python + AI</span> Online Class (7-9th grade)
+            <h1
+              className="cursor-pointer text-right mr-4 text-4xl text-gray-700 font-semibold mb-3"
+              onClick={closeModal}
+            >
+              x
+            </h1>
+            <h1 className="text-center md:text-4xl text-[#21811d] font-bold font-mono uppercase">
+              2024 Summer{" "}
+              <span className="underline underline-offset-4">Python + AI</span>{" "}
+              Online Class (7-9th grade)
             </h1>
             <div className="overflow-y-auto ttt">
-              <div className="flex text-center mt-8 pb-2">
+              <div className="flex md:flex-row flex-col text-center mt-8 pb-3">
                 <div className="basis-2/3 flex flex-col items-center justify-center">
                   <iframe
-                    width="750"
-                    height="450"
                     src="https://www.youtube.com/embed/88kCqAB148U?si=oT-HdFpll7lDKW_"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                     referrerpolicy="strict-origin-when-cross-origin"
-                    className="rounded-2xl"
+                    className="rounded-2xl md:w-[750px] md:h-[450px] h-56 w-[350px]"
                   ></iframe>
-                  <div className="text-center mt-7">
-                  <a
+                  <div className="text-center mt-7 mb-10 md:mb-0">
+                    <a
                       href="https://docs.google.com/forms/d/e/1FAIpQLScIqCLD78lfgnJ4n9KbkKtoL_f1tummqCSok_2zyOdvK6yz0w/viewform"
                       className="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
                       target="_blank"
@@ -116,7 +129,14 @@ const CourseCard3 = (props) => {
                       Course Description
                     </h1>
                     <p className="text-base font-serif pt-3 text-justify text-gray-700">
-                    The Python Beginner 1 course covers Python basics, the main function, running small functions, and simple visualizations. Python Beginner 2 builds on this, offering comprehensive Python understanding, debugging skills, scientific packages, and designing simple projects. Together, these levels equip learners with essential and advanced Python programming skills for various applications.
+                      The Python Beginner 1 course covers Python basics, the
+                      main function, running small functions, and simple
+                      visualizations. Python Beginner 2 builds on this, offering
+                      comprehensive Python understanding, debugging skills,
+                      scientific packages, and designing simple projects.
+                      Together, these levels equip learners with essential and
+                      advanced Python programming skills for various
+                      applications.
                     </p>
                   </div>
 
@@ -133,48 +153,70 @@ const CourseCard3 = (props) => {
                   <div className="text-start text-[#21811d] font-mono text-lg font-bold pt-4">
                     <h1>
                       {" "}
-                      <span className="font-bold text-xl">Python Beginner 1: </span>
+                      <span className="font-bold text-xl">
+                        Python Beginner 1:{" "}
+                      </span>
                       <span className="text-lg font-bold underline underline-offset-4">
-                      6/24/24 - 7/5/24
+                        6/24/24 - 7/5/24
                       </span>{" "}
                     </h1>
 
                     <div className="flex pt-2">
                       <CalendarDaysIcon className="h-6 w-6 text-[#7dce47]" />
-                      <h1 className="text-gray-600 text-base"> &nbsp;- 9 Classes</h1>
+                      <h1 className="text-gray-600 text-base">
+                        {" "}
+                        &nbsp;- 9 Classes
+                      </h1>
                     </div>
 
                     <div className="flex pt-2">
                       <CalendarIcon className="h-6 w-6 text-[#7dce47]" />
-                      <h1 className="text-gray-600 text-base"> &nbsp;- Monday to Friday</h1>
+                      <h1 className="text-gray-600 text-base">
+                        {" "}
+                        &nbsp;- Monday to Friday
+                      </h1>
                     </div>
                     <div className="flex pt-2">
                       <ClockIcon className="h-6 w-6 text-[#7dce47]" />
-                      <h1 className="text-gray-600 text-base"> &nbsp;- 7:00 PM to 8:10 PM EST</h1>
+                      <h1 className="text-gray-600 text-base">
+                        {" "}
+                        &nbsp;- 7:00 PM to 8:10 PM EST
+                      </h1>
                     </div>
                   </div>
 
                   <div className="text-start text-[#21811d] font-mono text-lg font-bold pt-6">
                     <h1>
                       {" "}
-                      <span className="font-bold text-xl">Python Beginner 2: </span>
+                      <span className="font-bold text-xl">
+                        Python Beginner 2:{" "}
+                      </span>
                       <span className="text-lg font-bold underline underline-offset-4">
-                      7/8/24 - 7/19/24
+                        7/8/24 - 7/19/24
                       </span>{" "}
                     </h1>
 
                     <div className="flex pt-2">
                       <CalendarDaysIcon className="h-6 w-6 text-[#7dce47]" />
-                      <h1 className="text-gray-600 text-base"> &nbsp;- 10 Classes</h1>
+                      <h1 className="text-gray-600 text-base">
+                        {" "}
+                        &nbsp;- 10 Classes
+                      </h1>
                     </div>
 
                     <div className="flex pt-2">
                       <CalendarIcon className="h-6 w-6 text-[#7dce47]" />
-                      <h1 className="text-gray-600 text-base"> &nbsp;- Monday to Friday</h1>
+                      <h1 className="text-gray-600 text-base">
+                        {" "}
+                        &nbsp;- Monday to Friday
+                      </h1>
                     </div>
                     <div className="flex pt-2">
                       <ClockIcon className="h-6 w-6 text-[#7dce47]" />
-                      <h1 className="text-gray-600 text-base"> &nbsp;- 7:00 PM to 8:00 PM, EST</h1>
+                      <h1 className="text-gray-600 text-base">
+                        {" "}
+                        &nbsp;- 7:00 PM to 8:00 PM, EST
+                      </h1>
                     </div>
                   </div>
                 </div>
@@ -184,22 +226,23 @@ const CourseCard3 = (props) => {
                 <h1 className="font-bold text-2xl text-[#21811d]">
                   Course Details
                 </h1>
-                <div className="w-2/4 mx-auto text-lg font-semibold text-start text-gray-600 font-serif pt-4 pb-8">
+                <div className="md:w-2/4 w-3/4 mx-auto text-lg font-semibold text-start text-gray-600 font-serif pt-4 pb-8">
                   <ol className="list-decimal">
                     <li>
                       Early bird will get $50 off, if register by 4/1/2024.
                     </li>
-                    <li className="text-[#21811d]">Sibling or multiple registration group discount: </li>
+                    <li className="text-[#21811d]">
+                      Sibling or multiple registration group discount:{" "}
+                    </li>
                     <ul className="list-disc text-[#21811d]">
                       <li>2 students: $25 off.</li>
                       <li> 3+ students: $50 off</li>
                     </ul>
+                    <li> We will use Zoom for online class.</li>
                     <li>
-                      {" "}
-                      We will use Zoom for online class. 
-                    </li>
-                    <li>
-                    Beginner 2 class is the continuation of class beginner 1. We suggest students register both two sessions, in order to have a full understanding of Python. 
+                      Beginner 2 class is the continuation of class beginner 1.
+                      We suggest students register both two sessions, in order
+                      to have a full understanding of Python.
                     </li>
                   </ol>
                 </div>

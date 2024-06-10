@@ -35,7 +35,7 @@ const CourseCard4 = (props) => {
 
   return (
     <>
-      <div class="flex flex-col h-[490px] w-96 border-[3px] border-[#21851d31] rounded-3xlshadow shadow-slate-950/5 rounded-2xl overflow-hidden">
+      <div class="flex flex-col h-[520px] w-96 border-[3px] border-[#21851d31] rounded-3xlshadow shadow-slate-950/5 rounded-2xl overflow-hidden">
         <img
           class="object-cover h-48 w-full"
           src={require("../assets/courses/py3.png")}
@@ -85,25 +85,29 @@ const CourseCard4 = (props) => {
         >
           <div
             ref={(_subtitle) => (subtitle = _subtitle)}
-            className="text-2xl h-[750px] w-[1300px] rounded-3xl pt-6 overflow-y-auto ttt"
+            className="text-2xl md:h-[750px] md:w-[1300px] h-[650px] w-[350px] rounded-3xl overflow-y-auto ttt z-50"
           >
-            <h1 className="text-center text-4xl text-[#21811d] font-bold font-mono uppercase">
+            <h1
+              className="cursor-pointer text-right mr-4 text-4xl text-gray-700 font-semibold mb-3"
+              onClick={closeModal}
+            >
+              x
+            </h1>
+            <h1 className="text-center md:text-4xl text-[#21811d] font-bold font-mono uppercase">
               2024 Summer <span className="underline underline-offset-4">Code Math</span> Online Class (4-6th grade)
             </h1>
             <div className="overflow-y-auto ttt">
-              <div className="flex text-center mt-8 pb-8">
+              <div className="flex md:flex-row flex-col text-center mt-8 pb-3">
                 <div className="basis-2/3 flex flex-col items-center justify-center">
                   <iframe
-                    width="750"
-                    height="450"
                     src="https://www.youtube.com/embed/88kCqAB148U?si=oT-HdFpll7lDKW_"
                     title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
                     referrerpolicy="strict-origin-when-cross-origin"
-                    className="rounded-2xl"
+                    className="rounded-2xl md:w-[750px] md:h-[450px] h-56 w-[350px]"
                   ></iframe>
-                  <div className="text-center mt-7">
+                  <div className="text-center mt-7 mb-10 md:mb-0">
                     <a
                       href="https://docs.google.com/forms/d/e/1FAIpQLScIqCLD78lfgnJ4n9KbkKtoL_f1tummqCSok_2zyOdvK6yz0w/viewform"
                       className="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
@@ -165,7 +169,7 @@ const CourseCard4 = (props) => {
                 <h1 className="font-bold text-2xl text-[#21811d]">
                   Course Details
                 </h1>
-                <div className="w-2/4 mx-auto text-lg font-semibold text-start text-gray-600 font-serif pt-4 pb-8">
+                <div className="md:w-2/4 w-3/4 mx-auto text-lg font-semibold text-start text-gray-600 font-serif pt-4 pb-8">
                   <ol className="list-decimal">
                     <li>
                       Early bird will get $50 off, if register by 4/1/2024.

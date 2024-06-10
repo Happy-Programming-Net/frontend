@@ -27,9 +27,9 @@ const Courses = () => {
 
   return (
     <>
-      <div className="mt-10 flex-col flex overflow min-h-screen max-h-screen overflow-y-scroll ttt pb-24">
+      <div className=" mt-8 lg:mt-10 flex-col flex overflow min-h-screen max-h-screen overflow-y-scroll ttt pb-24">
         {/* <div className="overflow-y-scroll pb-56 ttt"> */}
-          <div className="pl-4 mx-10">
+          <div className="lg:pl-4 mx-10">
             <h1 className="text-5xl font-bold leading-relaxed text-[#21811d] font-serif">
               Start Learning
             </h1>
@@ -37,7 +37,7 @@ const Courses = () => {
               Explore courses the world's top Instructors.
             </h1>
           </div>
-          <div className="w-11/12 mx-auto grid grid-cols-3 ttt gap-12">
+          <div className="lg:w-11/12 mx-auto grid lg:grid-cols-3 ttt gap-12">
             {/* {courses &&
               courses.map((cour, key) => <CourseCard data={cour} key={key} />)} */}
               <CourseCard2 />

@@ -29,7 +29,7 @@ const NavBar = () => {
   return (
     <>
       <div>
-        <nav className="text-5xl sticky z-10 h-20 w-[96%] mx-auto border-b-2 border-gray-300 hidden md:block">
+        <nav className="text-5xl sticky h-20 w-[96%] mx-auto border-b-2 border-gray-300 hidden lg:block">
           <div className="flex justify-evenly items-center h-full">
             <div className="flex justify-between items-center w-full">
               <div className="relative flex items-center w-96 h-12 rounded-3xl focus-within:shadow-lg bg-white overflow-hidden">
@@ -102,7 +102,7 @@ const NavBar = () => {
           </div>
         </nav>
 
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <div className="flex items-center justify-between py-2 px-4">
           <div className="flex items-center">
             <img
@@ -172,7 +172,7 @@ const NavBar = () => {
           leaveTo="opacity-0 scale-95"
         >
           {(ref) => (
-            <div className="md:hidden absolute z-50 bg-slate-200 w-full text-center" id="mobile-menu">
+            <div className="lg:hidden absolute z-50 bg-slate-200 w-full text-center" id="mobile-menu">
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <NavLink
                   onClick={() => setIsOpen(!isOpen)}

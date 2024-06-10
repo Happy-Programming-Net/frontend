@@ -16,10 +16,10 @@ function App() {
   return (
     <BrowserRouter>
       <div className="flex bg-[#94d7682d]">
-        <div className="basis-[11%] hidden md:block">
+        <div className="basis-[11%] hidden lg:block">
           <SideNavBar />
         </div>
-        <div className="md:basis-[89%] ttt overflow min-h-screen max-h-screen overflow-y-hidden w-full md:w-[95%] mx-auto">
+        <div className="lg:basis-[89%] ttt overflow min-h-screen max-h-screen overflow-y-hidden w-full lg:w-[95%] mx-auto">
           <NavBar />
           <Routes>
             <Route exact path="/" element={<Home />} />

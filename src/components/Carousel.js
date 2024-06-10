@@ -12,7 +12,7 @@ const Carousel = () => {
           >
             <img
               src={require('../assets/carousel/aipy.png')}
-              className="block md:w-[1500px] md:h-[500px] h-80 md:rounded-3xl"
+              className="block md:w-[1500px] lg:w-full md:h-[500px] h-80 md:rounded-3xl"
               alt="..."
             />
             {/* <div className="absolute inset-x-[15%] bottom-16 hidden py-5 text-center text-white md:block bg-slate-100 rounded-2xl">
@@ -28,7 +28,7 @@ const Carousel = () => {
           >
             <img
               src={require('../assets/carousel/aipy4.png')}
-              className="md:w-[1500px] md:h-[500px] h-80 md:rounded-3xl"
+              className="md:w-[1500px] lg:w-full md:h-[500px] h-80 md:rounded-3xl"
               alt="..."
             />
             <div className="hidden md:block absolute inset-x-[15%] md:bottom-16 py-5 text-center text-white bg-[rgba(241,245,249,1)] rounded-2xl">
@@ -51,7 +51,7 @@ const Carousel = () => {
           >
             <img
               src={require('../assets/carousel/aipy2.png')}
-              className="md:w-[1500px] md:h-[500px] h-80 md:rounded-3xl"
+              className="md:w-[1500px] lg:w-full md:h-[500px] h-80 md:rounded-3xl"
               alt="..."
             />
             <div className="absolute inset-x-[15%] bottom-16 hidden py-5 text-center text-white md:block bg-slate-100 rounded-2xl">
