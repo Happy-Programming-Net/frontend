@@ -1,6 +1,29 @@
-import React from "react";
+import React, { useRef } from "react";
+import emailjs from '@emailjs/browser';
+import { NotificationManager } from "react-notifications";
+
 
 const Contact = () => {
+  const form = useRef();
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, {
+        publicKey: process.env.REACT_APP_API_KEY,
+      })
+      .then(
+        () => {
+          console.log('SUCCESS!');
+          NotificationManager.success("Message sent successfully!!!");
+        },
+        (error) => {
+          console.log('FAILED...', error.text);
+          NotificationManager.error("Message could not be sent, Please try again");
+        },
+      );
+      e.target.reset();
+  };
   return (
     <>
       <section className="overflow min-h-screen max-h-screen overflow-y-scroll ttt pb-24" id="contact">
@@ -115,7 +138,7 @@ const Contact = () => {
               <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
                 <h2 className="mb-4 text-2xl font-bold ">Ready to Get Started?</h2>
                 
-                  <div className="mb-6">
+                  <form ref={form} onSubmit={sendEmail} className="mb-6">
                     <div className="mx-0 mb-1 sm:mb-4">
                       <div className="mx-0 sm:mb-4 mb-6">
                         <label
@@ -123,6 +146,7 @@ const Contact = () => {
                           className="pb-1 text-xs uppercase tracking-wider"
                         ></label>
                         <input
+                        required
                           type="text"
                           id="name"
                           autocomplete="given-name"
@@ -137,12 +161,28 @@ const Contact = () => {
                           className="pb-1 text-xs uppercase tracking-wider"
                         ></label>
                         <input
+                        required
                           type="email"
                           id="email"
                           autocomplete="email"
                           placeholder="Your email address"
                           className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
                           name="email"
+                        />
+                      </div>
+                      <div className="mx-0 sm:mb-4 mb-6">
+                        <label
+                          for="email"
+                          className="pb-1 text-xs uppercase tracking-wider"
+                        ></label>
+                        <input
+                        required
+                          type="text"
+                          id="subject"
+                          autocomplete="subject"
+                          placeholder="Subject"
+                          className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
+                          name="subject"
                         />
                       </div>
                     </div>
@@ -152,20 +192,22 @@ const Contact = () => {
                         className="pb-1 text-xs uppercase tracking-wider"
                       ></label>
                       <textarea
-                        id="textarea"
-                        name="textarea"
+                      required
+                        id="message"
+                        name="message"
                         cols="30"
                         rows="5"
                         placeholder="Write your message..."
                         className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
                       ></textarea>
                     </div>
-                  </div>
-                  <div className="text-center">
-                    <button className="w-full bg-[#94d768] text-[#21811d] font-bold font-serif px-6 py-3 font-xl rounded-md sm:mb-0">
+                    <div className="text-center">
+                    <button className="w-full bg-[#94d768] text-[#21811d] font-bold font-serif px-6 mt-5 py-3 font-xl rounded-md sm:mb-0">
                       Send Message
                     </button>
                   </div>
+                  </form>
+                  
                 
               </div>
             </div>
