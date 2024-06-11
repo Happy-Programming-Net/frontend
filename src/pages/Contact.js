@@ -1,7 +1,6 @@
 import React, { useRef } from "react";
-import emailjs from '@emailjs/browser';
+import emailjs from "@emailjs/browser";
 import { NotificationManager } from "react-notifications";
-
 
 const Contact = () => {
   const form = useRef();
@@ -9,24 +8,34 @@ const Contact = () => {
     e.preventDefault();
 
     emailjs
-      .sendForm(process.env.REACT_APP_SERVICE_ID, process.env.REACT_APP_TEMPLATE_ID, form.current, {
-        publicKey: process.env.REACT_APP_API_KEY,
-      })
+      .sendForm(
+        process.env.REACT_APP_SERVICE_ID,
+        process.env.REACT_APP_TEMPLATE_ID,
+        form.current,
+        {
+          publicKey: process.env.REACT_APP_API_KEY,
+        }
+      )
       .then(
         () => {
-          console.log('SUCCESS!');
+          console.log("SUCCESS!");
           NotificationManager.success("Message sent successfully!!!");
         },
         (error) => {
-          console.log('FAILED...', error.text);
-          NotificationManager.error("Message could not be sent, Please try again");
-        },
+          console.log("FAILED...", error.text);
+          NotificationManager.error(
+            "Message could not be sent, Please try again"
+          );
+        }
       );
-      e.target.reset();
+    e.target.reset();
   };
   return (
     <>
-      <section className="overflow min-h-screen max-h-screen overflow-y-scroll ttt pb-24" id="contact">
+      <section
+        className="overflow min-h-screen max-h-screen overflow-y-scroll ttt pb-24"
+        id="contact"
+      >
         <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8 lg:py-20 font-serif">
           <div className="mb-4">
             <div className="mb-6 max-w-3xl text-center sm:text-center md:mx-auto md:mb-12">
@@ -45,7 +54,9 @@ const Contact = () => {
             <div className="grid md:grid-cols-2">
               <div className="h-full pr-6">
                 <p className="mt-3 mb-12 text-xl text-gray-700 ">
-                Have questions or feedback? We’re here to help! Reach out to us using the following methods. We look forward to hearing from you.
+                  Have questions or feedback? We’re here to help! Reach out to
+                  us using the following methods. We look forward to hearing
+                  from you.
                 </p>
                 <ul className="mb-6 md:mb-0">
                   <li className="flex">
@@ -71,7 +82,7 @@ const Contact = () => {
                         Our Address
                       </h3>
                       <p className="text-gray-600 ">
-                      Near Longfellow Middle School, Falls Church
+                        Near Longfellow Middle School, Falls Church
                       </p>
                       <p className="text-gray-700 ">VA, 22043</p>
                     </div>
@@ -100,7 +111,9 @@ const Contact = () => {
                         Contact
                       </h3>
                       <p className="text-gray-700 ">Mobile: 703-300-0061</p>
-                      <p className="text-gray-700 ">Mail: happyprogramming.us@gmail.com</p>
+                      <p className="text-gray-700 ">
+                        Mail: happyprogramming.us@gmail.com
+                      </p>
                     </div>
                   </li>
                   <li className="flex">
@@ -128,87 +141,85 @@ const Contact = () => {
                       <p className="text-gray-700 ">
                         Monday - Saturday: 13:00 - 18:00 EST
                       </p>
-                      <p className="text-gray-700 ">
-                        Sunday : Closed
-                      </p>
+                      <p className="text-gray-700 ">Sunday : Closed</p>
                     </div>
                   </li>
                 </ul>
               </div>
               <div className="card h-fit max-w-6xl p-5 md:p-12" id="form">
-                <h2 className="mb-4 text-2xl font-bold ">Ready to Get Started?</h2>
-                
-                  <form ref={form} onSubmit={sendEmail} className="mb-6">
-                    <div className="mx-0 mb-1 sm:mb-4">
-                      <div className="mx-0 sm:mb-4 mb-6">
-                        <label
-                          for="name"
-                          className="pb-1 text-xs uppercase tracking-wider"
-                        ></label>
-                        <input
-                        required
-                          type="text"
-                          id="name"
-                          autocomplete="given-name"
-                          placeholder="Your name"
-                          className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
-                          name="name"
-                        />
-                      </div>
-                      <div className="mx-0 sm:mb-4 mb-6">
-                        <label
-                          for="email"
-                          className="pb-1 text-xs uppercase tracking-wider"
-                        ></label>
-                        <input
-                        required
-                          type="email"
-                          id="email"
-                          autocomplete="email"
-                          placeholder="Your email address"
-                          className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
-                          name="email"
-                        />
-                      </div>
-                      <div className="mx-0 sm:mb-4 mb-6">
-                        <label
-                          for="email"
-                          className="pb-1 text-xs uppercase tracking-wider"
-                        ></label>
-                        <input
-                        required
-                          type="text"
-                          id="subject"
-                          autocomplete="subject"
-                          placeholder="Subject"
-                          className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
-                          name="subject"
-                        />
-                      </div>
-                    </div>
-                    <div className="mx-0 mb-1 sm:mb-4">
+                <h2 className="mb-4 text-2xl font-bold ">
+                  Ready to Get Started?
+                </h2>
+
+                <form ref={form} onSubmit={sendEmail} className="mb-6">
+                  <div className="mx-0 mb-1 sm:mb-4">
+                    <div className="mx-0 sm:mb-4 mb-6">
                       <label
-                        for="textarea"
+                        for="name"
                         className="pb-1 text-xs uppercase tracking-wider"
                       ></label>
-                      <textarea
-                      required
-                        id="message"
-                        name="message"
-                        cols="30"
-                        rows="5"
-                        placeholder="Write your message..."
+                      <input
+                        required
+                        type="text"
+                        id="name"
+                        autocomplete="given-name"
+                        placeholder="Your name"
                         className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
-                      ></textarea>
+                        name="name"
+                      />
                     </div>
-                    <div className="text-center">
+                    <div className="mx-0 sm:mb-4 mb-6">
+                      <label
+                        for="email"
+                        className="pb-1 text-xs uppercase tracking-wider"
+                      ></label>
+                      <input
+                        required
+                        type="email"
+                        id="email"
+                        autocomplete="email"
+                        placeholder="Your email address"
+                        className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
+                        name="email"
+                      />
+                    </div>
+                    <div className="mx-0 sm:mb-4 mb-6">
+                      <label
+                        for="email"
+                        className="pb-1 text-xs uppercase tracking-wider"
+                      ></label>
+                      <input
+                        required
+                        type="text"
+                        id="subject"
+                        autocomplete="subject"
+                        placeholder="Subject"
+                        className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
+                        name="subject"
+                      />
+                    </div>
+                  </div>
+                  <div className="mx-0 mb-1 sm:mb-4">
+                    <label
+                      for="textarea"
+                      className="pb-1 text-xs uppercase tracking-wider"
+                    ></label>
+                    <textarea
+                      required
+                      id="message"
+                      name="message"
+                      cols="30"
+                      rows="5"
+                      placeholder="Write your message..."
+                      className="mb-2 w-full rounded-md border border-gray-400 py-2 pl-2 pr-4 shadow-md  sm:mb-0"
+                    ></textarea>
+                  </div>
+                  <div className="text-center">
                     <button className="w-full bg-[#94d768] text-[#21811d] font-bold font-serif px-6 mt-5 py-3 font-xl rounded-md sm:mb-0">
                       Send Message
                     </button>
                   </div>
-                  </form>
-                  
-                
+                </form>
               </div>
             </div>
           </div>
