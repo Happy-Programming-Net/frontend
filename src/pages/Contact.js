@@ -6,7 +6,6 @@ const Contact = () => {
   const form = useRef();
   const sendEmail = (e) => {
     e.preventDefault();
-
     emailjs
       .sendForm(
         process.env.REACT_APP_SERVICE_ID,
@@ -30,6 +29,7 @@ const Contact = () => {
       );
     e.target.reset();
   };
+  
   return (
     <>
       <section

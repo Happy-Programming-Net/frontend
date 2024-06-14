@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BellIcon } from "@heroicons/react/24/outline";
+// import { BellIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -61,7 +61,7 @@ const NavBar = () => {
                 Happy Programming
               </h1>
               <div className="flex items-center">
-                <BellIcon className="h-14 w-14 p-2 text-[#1f901c] rounded-full" />
+                {/* <BellIcon className="h-14 w-14 p-2 text-[#1f901c] rounded-full" /> */}
                 {user ? (
                   <>
                     {user === "student" ? (

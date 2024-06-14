@@ -10,7 +10,6 @@ const Create = () => {
         <div className="text-center mt-16 text-4xl font-mono font-bold text-[#21811d]">
           <h1>Create a Course</h1>
         </div>
-        
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={signIn}>
             <div>
