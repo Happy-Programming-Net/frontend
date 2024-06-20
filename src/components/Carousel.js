@@ -8,6 +8,7 @@ const Carousel = () => {
       <TECarousel
         showIndicators
         ride="carousel"
+        
         className="hidden md:block md:w-11/12 mx-auto rounded-none md:rounded-2xl md:pt-12"
         theme={{
           indicator:

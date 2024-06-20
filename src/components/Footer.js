@@ -24,7 +24,7 @@ const Footer = () => {
               
             </div>
           </div>
-          <div className="space-y-2 text-sm">
+          <div className="space-y-2 text-sm place-self-center">
             <p className="text-base font-bold tracking-wide text-gray-900">
               Contacts
             </p>
@@ -65,7 +65,7 @@ const Footer = () => {
               </a>
             </div>
           </div>
-          <div>
+          <div className='place-self-center'>
             <span className="text-base font-bold tracking-wide text-gray-900">
               Social
             </span>

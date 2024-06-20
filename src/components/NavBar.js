@@ -88,13 +88,10 @@ const NavBar = () => {
                     </NavLink>
                   </>
                 ) : (
-                  // <NavLink to="/login" className="cursor-not-allowed">
-                  <button
-                    disabled
-                    className="mr-8 ml-8 bg-[#94d768] text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-8 border-2 border-[#1f901c] rounded-full font-mono font-extrabold cursor-not-allowed"
-                  >
-                    Login
-                  </button>
+                  // <NavLink to="/login">
+                    <button disabled className="mr-8 ml-8 bg-[#94d768] text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-8 border-2 border-[#1f901c] rounded-full font-mono font-extrabold cursor-not-allowed">
+                      Login
+                    </button>
                   // </NavLink>
                 )}
               </div>
@@ -102,64 +99,64 @@ const NavBar = () => {
           </div>
         </nav>
 
-        <div className="lg:hidden">
+        <div className="lg:hidden shadow-lg">
           <div className="flex items-center justify-between py-2 px-4">
-          <div className="flex items-center">
-            <img
-              src={require("../assets/logo/logo.png")}
-              alt=""
-              className="h-20"
-            />
-            <h1 className="font-serif text-2xl text-center pl-1 font-bold text-[#1f901c]">
-              Happy <br /> Programming
-            </h1>
+            <div className="flex items-center">
+              <img
+                src={require("../assets/logo/logo.png")}
+                alt=""
+                className="h-20"
+              />
+              <h1 className="font-serif text-2xl text-center pl-1 font-bold text-[#1f901c]">
+                Happy <br /> Programming
+              </h1>
+            </div>
+
+            <div className="-mr-2 ">
+              <button
+                onClick={() => setIsOpen(!isOpen)}
+                type="button"
+                className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                aria-controls="mobile-menu"
+                aria-expanded="false"
+              >
+                <span className="sr-only">Open main menu</span>
+                {!isOpen ? (
+                  <svg
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M4 6h16M4 12h16M4 18h16"
+                    />
+                  </svg>
+                ) : (
+                  <svg
+                    className="block h-6 w-6"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M6 18L18 6M6 6l12 12"
+                    />
+                  </svg>
+                )}
+              </button>
+            </div>
           </div>
-          
-          <div className="-mr-2 ">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              type="button"
-              className="bg-gray-900 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
-              aria-controls="mobile-menu"
-              aria-expanded="false"
-            >
-              <span className="sr-only">Open main menu</span>
-              {!isOpen ? (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              ) : (
-                <svg
-                  className="block h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
-              )}
-            </button>
-          </div>
-        </div>
         </div>
 
         <Transition
@@ -172,7 +169,10 @@ const NavBar = () => {
           leaveTo="opacity-0 scale-95"
         >
           {(ref) => (
-            <div className="lg:hidden absolute z-50 bg-slate-200 w-full text-center" id="mobile-menu">
+            <div
+              className="lg:hidden absolute z-50 bg-[rgb(239,248,231)] w-full text-center shadow-2xl border-b-4 border-[#1f901c]"
+              id="mobile-menu"
+            >
               <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                 <NavLink
                   onClick={() => setIsOpen(!isOpen)}
@@ -198,9 +198,9 @@ const NavBar = () => {
                   to="/courses"
                   className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
-                    Courses
+                  Courses
                 </NavLink>
-                
+
                 <NavLink
                   onClick={() => setIsOpen(!isOpen)}
                   style={({ isActive }) => {
@@ -214,11 +214,23 @@ const NavBar = () => {
                 >
                   Contact Us
                 </NavLink>
+                {/* <NavLink
+                  onClick={() => setIsOpen(!isOpen)}
+                  style={({ isActive }) => {
+                    return {
+                      backgroundColor: isActive ? "rgb(55 65 81)" : "",
+                      color: isActive ? "white" : "",
+                    };
+                  }}
+                  to="/login"
+                  className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                >
+                  Login / Register
+                </NavLink> */}
               </div>
             </div>
           )}
         </Transition>
-
       </div>
     </>
   );
