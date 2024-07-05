@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NotificationManager } from "react-notifications";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const Login = () => {
   const [logintab, setLoginTab] = useState("login");
@@ -11,16 +11,59 @@ const Login = () => {
     e.preventDefault();
     console.log(e.target.email.value);
     console.log(e.target.password.value);
-    NotificationManager.success("Sign In successful");
-    navigate('/');
-    e.target.reset();
+    var email = e.target.email.value;
+    var password = e.target.password.value;
+
+    try {
+      const response = await axios.post("http://127.0.0.1:5000/login", {
+        email,
+        password,
+      });
+      console.log(response.data.status);
+      if (response.data.status === "success") {
+        NotificationManager.success("Sign In successful");
+        navigate("/");
+        e.target.reset();
+      } else {
+        NotificationManager.error("Invalid Credentials");
+      }
+    } catch (error) {
+      NotificationManager.error("Invalid Credentials");
+    }
   };
 
   const registerStudent = async (e) => {
     e.preventDefault();
     console.log(e.target.regemail.value);
-    NotificationManager.success("Registration Successful");
-    navigate('/login');
+    const email = e.target.regemail.value;
+    const password = e.target.password.value;
+    const fname = e.target.fname.value;
+    const lname = e.target.lname.value;
+
+    var phone = e.target.phone.value;
+    if (!phone) {
+      phone = 0;
+    }
+    console.log(e.target.fname.value);
+
+    try {
+      const response = await axios.post("http://127.0.0.1:5000/register", {
+        email,
+        password,
+        fname,
+        lname,
+        phone,
+      });
+      NotificationManager.success("Registration Successful");
+
+      console.log(response.data);
+      setLoginTab("login");
+      NotificationManager.info("Please Login to continue");
+    } catch (error) {
+      NotificationManager.error("Registration Failed; Try again");
+      // console.error(error.response.data);
+    }
+    // navigate('/login');
     e.target.reset();
   };
 
@@ -37,7 +80,9 @@ const Login = () => {
             <div className="flex border-2 rounded-full border-[#94d768] text-center">
               {logintab === "login" ? (
                 <div className="border-r-2 py-3 px-8 pl-10 border-[#94d768] md:w-48 bg-[#94d768] rounded-l-full">
-                  <h1 className="pr-2 md:text-2xl font-mono font-bold">Login</h1>
+                  <h1 className="pr-2 md:text-2xl font-mono font-bold">
+                    Login
+                  </h1>
                 </div>
               ) : (
                 <div
@@ -153,7 +198,7 @@ const Login = () => {
                       </label>
                       <div className="mt-2">
                         <input
-                        required
+                          required
                           id="regemail"
                           name="registeremail"
                           type="email"
@@ -173,7 +218,7 @@ const Login = () => {
                         </label>
                         <div className="mt-2">
                           <input
-                          required
+                            required
                             id="fname"
                             name="fname"
                             type="text"
@@ -192,7 +237,7 @@ const Login = () => {
                         </label>
                         <div className="mt-2">
                           <input
-                          required
+                            required
                             id="lname"
                             name="lname"
                             type="name"
@@ -214,7 +259,7 @@ const Login = () => {
                       </div>
                       <div className="mt-2">
                         <input
-                        required
+                          required
                           id="password"
                           name="password"
                           type="password"
@@ -225,24 +270,23 @@ const Login = () => {
                     </div>
 
                     <div>
-                        <label
-                          htmlFor="phone"
-                          className="block text-lg font-bold font-serif leading-6 text-[#21811d]"
-                        >
-                          Phone Number (+1)
-                        </label>
-                        <div className="mt-2">
-                          <input
-                          
-                            id="phone"
-                            name="phone"
-                            type="tel"
-                            autoComplete="tel"
-                            pattern="[0-9]{10}"
-                            className="block w-full px-3 font-mono font-bold text-[#727272] rounded-md border-0 py-1.5  shadow-sm ring-2 ring-inset ring-[#94d768] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#94d768] sm:text-sm sm:leading-6"
-                          />
-                        </div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-lg font-bold font-serif leading-6 text-[#21811d]"
+                      >
+                        Phone Number (+1)
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          autoComplete="tel"
+                          pattern="[0-9]{10}"
+                          className="block w-full px-3 font-mono font-bold text-[#727272] rounded-md border-0 py-1.5  shadow-sm ring-2 ring-inset ring-[#94d768] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#94d768] sm:text-sm sm:leading-6"
+                        />
                       </div>
+                    </div>
 
                     <div>
                       <button
