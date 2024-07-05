@@ -1,10 +1,10 @@
 import React from "react";
+import Modal from "react-modal";
 import {
   CalendarIcon,
   ClockIcon,
   CalendarDaysIcon,
 } from "@heroicons/react/24/solid";
-import Modal from "react-modal";
 
 const customStyles = {
   content: {
@@ -18,11 +18,13 @@ const customStyles = {
   },
 };
 
-const CourseCard2 = (props) => {
+const CourseTile = (props) => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal() {
-    setIsOpen(true);
+    if (props.data.open === 1) {
+      setIsOpen(true);
+    }
   }
 
   function afterOpenModal() {
@@ -32,51 +34,55 @@ const CourseCard2 = (props) => {
   function closeModal() {
     setIsOpen(false);
   }
-
   return (
     <>
-      <div class="flex flex-col h-[520px] w-96 border-[3px] border-[#21851d31] rounded-3xlshadow shadow-slate-950/5 rounded-2xl overflow-hidden">
-        <img
-          class="object-cover h-48 w-full"
-          src={require("../assets/courses/python.png")}
-          width="304"
-          height="192"
-          alt="Course 01"
-        />
-        <div class="flex-1 flex flex-col p-6">
-          <div class="flex-1">
-            <header class="mb-2">
-              <h2 class="text-xl font-extrabold leading-snug">
-                <a
-                  class="text-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
-                  href="#0"
-                >
-                  2024 Summer{" "}
-                  <span className="text-[#37ae33]">Python + AI </span>
-                  <span className="underline underline-offset-2">
-                    In-person Camp
-                  </span>{" "}
-                  (7-10th grade)
-                </a>
-              </h2>
-            </header>
-            <div className="flex pt-2">
-              <h1 className=" pl-2 font-serif text-lg">
-                You'll learn the main programming concepts and all Python basics
-                needed to get a good taste of this programming language.{" "}
+      <div className="mt-10">
+        <div
+          className="w-11/12 border-b-2 border-[#20811da4] border-dashed pb-10 group cursor-pointer"
+          onClick={openModal}
+        >
+          <div className="flex justify-between items-center group-hover:underline underline-offset-4 text-[#21811d] cursor-pointer">
+            <h1 className="text-3xl font-serif font-bold text-[#21811d] cursor-pointer">
+              {props.data.cname}
+            </h1>
+            <h1 className="text-3xl font-serif font-bold text-black">
+              {props.data.duration}
+            </h1>
+          </div>
+          <div className="mt-6 ml-24 flex justify-between items-center">
+            <div className=" grow">
+              <ul className="marker:text-[#21811d] list-disc marker:text-4xl">
+                <li className="text-xl font-sans font-medium">
+                  Course Style: {props.data.mode}
+                </li>
+                <li className="text-xl font-sans font-medium">
+                  Level: {props.data.class}
+                </li>
+                <li className="text-xl font-sans font-medium">
+                  Language: {props.data.lang}
+                </li>
+                <li className="text-xl font-sans font-medium">
+                  Class Times: {props.data.dates}
+                </li>
+              </ul>
+            </div>
+            <div className="flex flex-col justify-between h-full">
+              {props.data.open === 1 ? (
+                <p className="mb-10 font-sans bg-[#8be988] p-1 font-semibold rounded-full px-3 text-base">
+                  Registrations Open
+                </p>
+              ) : (
+                <p className="mb-10 font-sans bg-[#f66565] p-1 font-semibold rounded-full px-3 text-base">
+                  Registrations Closed
+                </p>
+              )}
+
+              <h1 className="text-6xl font-sans text-[#21811d] font-bold">
+                ${props.data.price}
               </h1>
             </div>
           </div>
-          <div className="flex justify-center space-x-2 py-2">
-            <button
-              className="text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
-              onClick={openModal}
-            >
-              Know More
-            </button>
-          </div>
         </div>
-
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -95,9 +101,7 @@ const CourseCard2 = (props) => {
               x
             </h1>
             <h1 className="text-center md:text-4xl text-[#21811d] font-bold font-mono uppercase">
-              2024 Summer{" "}
-              <span className="underline underline-offset-4">Python + AI</span>{" "}
-              In-person Camp (7-10th grade)
+              {props.data.cname}
             </h1>
             <div className="overflow-y-auto ttt">
               <div className="flex md:flex-row flex-col text-center mt-8 pb-3">
@@ -111,14 +115,14 @@ const CourseCard2 = (props) => {
                     className="rounded-2xl md:w-[750px] md:h-[450px] h-56 w-[350px]"
                   ></iframe>
                   <div className="text-center mt-7 mb-10 md:mb-0">
-                    <h1
+                    <a
                       href="https://docs.google.com/forms/d/e/1FAIpQLScIqCLD78lfgnJ4n9KbkKtoL_f1tummqCSok_2zyOdvK6yz0w/viewform"
-                      className="mr-8 ml-2 text-xl  text-gray-500 py-3 px-6 border-2 border-gray-500 rounded-full cursor-not-allowed font-mono font-extrabold"
+                      className="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Registrations Closed
-                    </h1>
+                      Enroll Now
+                    </a>
                   </div>
                 </div>
 
@@ -252,4 +256,4 @@ const CourseCard2 = (props) => {
   );
 };
 
-export default CourseCard2;
+export default CourseTile;

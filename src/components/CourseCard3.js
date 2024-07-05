@@ -112,14 +112,14 @@ const CourseCard3 = (props) => {
                     className="rounded-2xl md:w-[750px] md:h-[450px] h-56 w-[350px]"
                   ></iframe>
                   <div className="text-center mt-7 mb-10 md:mb-0">
-                    <a
+                  <h1
                       href="https://docs.google.com/forms/d/e/1FAIpQLScIqCLD78lfgnJ4n9KbkKtoL_f1tummqCSok_2zyOdvK6yz0w/viewform"
-                      className="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
+                      className="mr-8 ml-2 text-xl  text-gray-500 py-3 px-6 border-2 border-gray-500 rounded-full cursor-not-allowed font-mono font-extrabold"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Enroll Now
-                    </a>
+                      Registrations Closed
+                    </h1>
                   </div>
                 </div>
 
