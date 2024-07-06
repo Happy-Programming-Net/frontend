@@ -22,9 +22,7 @@ const CourseTile = (props) => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(false);
   function openModal() {
-    if (props.data.open === 1) {
-      setIsOpen(true);
-    }
+    setIsOpen(true);
   }
 
   function afterOpenModal() {
@@ -114,36 +112,54 @@ const CourseTile = (props) => {
                     referrerpolicy="strict-origin-when-cross-origin"
                     className="rounded-2xl md:w-[750px] md:h-[450px] h-56 w-[350px]"
                   ></iframe>
-                  <div className="text-center mt-7 mb-10 md:mb-0">
-                    <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLScIqCLD78lfgnJ4n9KbkKtoL_f1tummqCSok_2zyOdvK6yz0w/viewform"
-                      className="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Enroll Now
-                    </a>
+                  <div className="text-center mt-7 mb-7">
+                    {props.data.open === 1 ? (
+                      <a
+                        href="https://docs.google.com/forms/d/e/1FAIpQLScIqCLD78lfgnJ4n9KbkKtoL_f1tummqCSok_2zyOdvK6yz0w/viewform"
+                        className="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Enroll Now
+                      </a>
+                    ) : (
+                      <h1
+                        href="https://docs.google.com/forms/d/e/1FAIpQLScIqCLD78lfgnJ4n9KbkKtoL_f1tummqCSok_2zyOdvK6yz0w/viewform"
+                        className="mr-8 ml-2 text-xl  text-gray-500 py-3 px-6 border-2 border-gray-500 rounded-full cursor-not-allowed font-mono font-extrabold"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Registrations Closed
+                      </h1>
+                    )}
                   </div>
                 </div>
 
                 <div className="basis-1/3 pr-8">
                   <div className="text-start">
                     <h1 className="text-[#21811d] font-mono text-xl font-bold">
-                      Course Description
+                      Topics Covered -
                     </h1>
-                    <p className="text-base font-serif pt-3 text-justify text-gray-700">
+                    {/* <p className="text-base font-serif pt-3 text-justify text-gray-700">
                       This course offers a comprehensive introduction to Python,
                       covering basics, the main function, small functions,
                       simple visualization, and debugging. Students will explore
                       scientific packages like NumPy and Pandas, and learn to
                       design simple projects, equipping them with practical
                       programming skills for data manipulation and analysis.
-                    </p>
+                    </p> */}
+                    <ol className="list-disc text-lg font-serif text-gray-700 pt-4 ml-5 marker:text2xl">
+                      {props.data.topics.map((top, ind) => (
+                        <li key={ind} className="pb-2">
+                          {top}
+                        </li>
+                      ))}
+                    </ol>
                   </div>
 
                   <div className="text-left text-[#21811d] pt-4 pb-3">
                     <span className="font-bold text-3xl text-[#21811d]">
-                      $999
+                      ${props.data.price}
                     </span>
                     <span className="text-3xl font-bold">&nbsp;USD</span>{" "}
                     <span className="font-bold text-xl">/ session</span>
@@ -156,7 +172,7 @@ const CourseTile = (props) => {
                       {" "}
                       <span className="font-bold text-2xl">Session 1: </span>
                       <span className="text-lg font-bold underline underline-offset-4">
-                        7/8/24 to 7/19/24
+                        {props.data.dates}
                       </span>{" "}
                     </h1>
 
@@ -164,40 +180,7 @@ const CourseTile = (props) => {
                       <CalendarDaysIcon className="h-6 w-6 text-[#7dce47]" />
                       <h1 className="text-gray-600 text-base">
                         {" "}
-                        &nbsp;- 9 Days
-                      </h1>
-                    </div>
-
-                    <div className="flex pt-2">
-                      <CalendarIcon className="h-6 w-6 text-[#7dce47]" />
-                      <h1 className="text-gray-600 text-base">
-                        {" "}
-                        &nbsp;- Monday to Friday
-                      </h1>
-                    </div>
-                    <div className="flex pt-2">
-                      <ClockIcon className="h-6 w-6 text-[#7dce47]" />
-                      <h1 className="text-gray-600 text-base">
-                        {" "}
-                        &nbsp;- 1:30 PM to 4:50 PM EST
-                      </h1>
-                    </div>
-                  </div>
-
-                  <div className="text-start text-[#21811d] font-mono text-lg font-bold pt-6">
-                    <h1>
-                      {" "}
-                      <span className="font-bold text-2xl">Session 2: </span>
-                      <span className="text-lg font-bold underline underline-offset-4">
-                        7/8/24 to 7/19/24
-                      </span>{" "}
-                    </h1>
-
-                    <div className="flex pt-2">
-                      <CalendarDaysIcon className="h-6 w-6 text-[#7dce47]" />
-                      <h1 className="text-gray-600 text-base">
-                        {" "}
-                        &nbsp;- 10 Days
+                        &nbsp;- {props.data.duration}
                       </h1>
                     </div>
 
