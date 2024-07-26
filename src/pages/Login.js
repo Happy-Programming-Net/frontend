@@ -1,11 +1,43 @@
 import React, { useState } from "react";
 import { NotificationManager } from "react-notifications";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 import axios from "axios";
+import { updateUser } from "../redux/user/userSlice";
 
 const Login = () => {
   const [logintab, setLoginTab] = useState("login");
   const navigate = useNavigate();
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [reqVerification, setReqVerification] = useState(false);
+  const dispatch = useDispatch();
+
+  const handlePasswordChange = (event) => {
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+  };
+
+  const handleConfirmPasswordChange = (event) => {
+    const newConfirmPassword = event.target.value;
+    setConfirmPassword(newConfirmPassword);
+  };
+
+  const validatePassword = (newPassword, newConfirmPassword) => {
+    if (!(newPassword === newConfirmPassword)) {
+      NotificationManager.warning("Passwords do not match. Please try again.");
+      return false;
+    }
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    var val = passwordRegex.test(newPassword);
+    if (!val) {
+      NotificationManager.warning(
+        "Password must be at least 6 characters long and contain at least one digit."
+      );
+      return false;
+    }
+    return true;
+  };
 
   const signIn = async (e) => {
     e.preventDefault();
@@ -22,9 +54,18 @@ const Login = () => {
       console.log(response.data.status);
       if (response.data.status === "success") {
         NotificationManager.success("Sign In successful");
+        console.log(response.data);
+        const ob = {
+          id: response.data.uid,
+        };
+        dispatch(updateUser(ob));
         navigate("/");
         e.target.reset();
-      } else {
+      } else if (response.data.code === 2) {
+        NotificationManager.error("Email not verified.");
+        setReqVerification(true);
+      }
+      else{
         NotificationManager.error("Invalid Credentials");
       }
     } catch (error) {
@@ -47,24 +88,41 @@ const Login = () => {
     console.log(e.target.fname.value);
 
     try {
-      const response = await axios.post("http://127.0.0.1:5000/register", {
-        email,
-        password,
-        fname,
-        lname,
-        phone,
-      });
-      NotificationManager.success("Registration Successful");
-
-      console.log(response.data);
-      setLoginTab("login");
-      NotificationManager.info("Please Login to continue");
+      if (validatePassword(password, confirmPassword)) {
+        const response = await axios.post("http://127.0.0.1:5000/register", {
+          email,
+          password,
+          fname,
+          lname,
+          phone,
+        });
+        if (response.data.code === 200) {
+          NotificationManager.success("Registration Successful");
+          console.log(response.data);
+          setLoginTab("login");
+          NotificationManager.info(
+            "Verification email has been sent to " +
+              email +
+              ". Please verify your email address to continue."
+          );
+          console.log("heellelelelelelel");
+          setConfirmPassword("");
+          setPassword("");
+        } else {
+          NotificationManager.error(
+            "Email already exists. Please use a different email."
+          );
+        }
+      }
     } catch (error) {
       NotificationManager.error("Registration Failed; Try again");
       // console.error(error.response.data);
+      // e.target.reset();
     }
     // navigate('/login');
-    e.target.reset();
+    // e.target.reset();
+    // setConfirmPassword('');
+    // setPassword('');
   };
 
   return (
@@ -171,11 +229,17 @@ const Login = () => {
                     <div>
                       <button
                         type="submit"
-                        className="bg-[#94d768] text-xl hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
+                        className="bg-[#94d768] mt-2 text-xl hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
                       >
                         Sign in
                       </button>
                     </div>
+
+                    {reqVerification && (
+                      <p className="text-serif text-xl text-[#21811d] underline cursor-pointer underline-offset-4">
+                        Send new verification link
+                      </p>
+                    )}
                   </form>
                 </div>
               </div>
@@ -264,6 +328,31 @@ const Login = () => {
                           name="password"
                           type="password"
                           autoComplete="current-password"
+                          value={password}
+                          onChange={handlePasswordChange}
+                          className="block px-3 font-mono font-bold text-[#727272] w-full rounded-md border-0 py-1.5  shadow-sm ring-2 ring-inset ring-[#94d768] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#94d768] sm:text-sm sm:leading-6"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="flex items-center justify-between">
+                        <label
+                          htmlFor="password"
+                          className="block text-lg font-serif font-bold leading-6 text-[#21811d]"
+                        >
+                          Confirm Password{" "}
+                          <span className="text-red-700">*</span>
+                        </label>
+                      </div>
+                      <div className="mt-2">
+                        <input
+                          required
+                          id="confirmpassword"
+                          name="confirmpassword"
+                          type="password"
+                          value={confirmPassword}
+                          onChange={handleConfirmPasswordChange}
                           className="block px-3 font-mono font-bold text-[#727272] w-full rounded-md border-0 py-1.5  shadow-sm ring-2 ring-inset ring-[#94d768] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#94d768] sm:text-sm sm:leading-6"
                         />
                       </div>

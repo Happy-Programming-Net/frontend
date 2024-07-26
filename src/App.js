@@ -11,6 +11,7 @@ import Logout from "./pages/Logout";
 import 'react-notifications/lib/notifications.css';
 import {NotificationContainer} from 'react-notifications';
 import Create from "./pages/Create";
+import VerifyEmail from "./pages/VerifyEmail";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/logout" element={<Logout />} />
             <Route path="/create" element={<Create />} />
+            <Route path="/verify_email/:token" element={<VerifyEmail />} />
           </Routes>
         </div>
         <NotificationContainer/>

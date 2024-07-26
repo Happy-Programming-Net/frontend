@@ -7,20 +7,18 @@ import { updateUser } from "../redux/user/userSlice";
 import { Transition } from "@headlessui/react";
 
 const NavBar = () => {
-  const user = useSelector((state) => state.user.role);
+  const user = useSelector((state) => state.user.id);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
 
   const logOut = () => {
     const ob = {
-      role: "",
       id: 0,
       fname: "",
       lname: "",
       email: "",
       phone: "",
-      about: "",
     };
     dispatch(updateUser(ob));
     navigate("/logout");
