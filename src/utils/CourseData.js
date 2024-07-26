@@ -1,8 +1,8 @@
 export const PythonCourses = [
   {
     cname: "Course 100: Introduction to Python Programming",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "5+ Grade",
     mode: "Online",
@@ -17,12 +17,12 @@ export const PythonCourses = [
   },
   {
     cname: "Course 101: Algorithms and Data Structures in Python",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "5+ Grade",
     mode: "Online",
-    price: 850,
+    price: 900,
     open: 1,
     topics: [
       "Mastering Python programming language",
@@ -32,13 +32,29 @@ export const PythonCourses = [
     ],
   },
   {
-    cname: "Course 102: Python Hands-on Projects",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    cname: "Course 102V: Python Hands-on Projects",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "5+ Grade",
     mode: "Online",
-    price: 900,
+    price: 1200,
+    open: 0,
+    topics: [
+      "Project 1: Personal Finance Tracker",
+      "Project 2: Simple Web Scraper",
+      "Project 3: Basic Chatbot",
+      "Project 4: Game Development",
+    ],
+  },
+  {
+    cname: "Course 102P: Python Hands-on Projects",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
+    lang: "Python",
+    class: "5+ Grade",
+    mode: "In Person",
+    price: 2000,
     open: 0,
     topics: [
       "Project 1: Personal Finance Tracker",
@@ -52,12 +68,12 @@ export const PythonCourses = [
 export const BronzeCourses = [
   {
     cname: "Course 200: Problem Decomposition with Iteration & Recursion",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "6+ Grade",
     mode: "Online",
-    price: 1000,
+    price: 1100,
     open: 1,
     topics: [
       "Iteration and bottom-up problem solving",
@@ -68,12 +84,12 @@ export const BronzeCourses = [
   },
   {
     cname: "Course 201: Depth First Search In-Depth",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "6+ Grade",
     mode: "Online",
-    price: 1000,
+    price: 1100,
     open: 0,
     topics: [
       "Advanced recursion",
@@ -85,12 +101,12 @@ export const BronzeCourses = [
   },
   {
     cname: "Course 202: Breadth First Search In-Depth",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "6+ Grade",
     mode: "Online",
-    price: 1000,
+    price: 1100,
     open: 0,
     topics: [
       "Python standard libraries: set, dict, queue",
@@ -106,12 +122,12 @@ export const BronzeCourses = [
 export const SilverCourses = [
   {
     cname: "Course 300: Advanced Algorithm Design I",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "7+ Grade",
     mode: "Online",
-    price: 1100,
+    price: 1200,
     open: 0,
     topics: [
       "Mastery of Python language",
@@ -125,12 +141,12 @@ export const SilverCourses = [
   },
   {
     cname: "Course 301: Advanced Data Structures I",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "7+ Grade",
     mode: "Online",
-    price: 1100,
+    price: 1200,
     open: 0,
     topics: [
       "Tree representation and basic properties",
@@ -144,12 +160,12 @@ export const SilverCourses = [
   },
   {
     cname: "Course 302: Dynamic Programming I",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "7+ Grade",
     mode: "Online",
-    price: 1100,
+    price: 1200,
     open: 0,
     topics: [
       "Understanding Dynamic Programming",
@@ -164,12 +180,12 @@ export const SilverCourses = [
 export const GoldCourses = [
   {
     cname: "Course 400: Advanced Algorithm Design II",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "8+ Grade",
     mode: "Online",
-    price: 1200,
+    price: 1300,
     open: 0,
     topics: [
       "Sorting review",
@@ -182,12 +198,12 @@ export const GoldCourses = [
   },
   {
     cname: "Course 401: Advanced Data Structures II",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "8+ Grade",
     mode: "Online",
-    price: 1200,
+    price: 1300,
     open: 0,
     topics: [
       "Linear data structures: stacks and queues",
@@ -201,12 +217,12 @@ export const GoldCourses = [
   },
   {
     cname: "Course 402: Dynamic Programming II",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "8+ Grade",
     mode: "Online",
-    price: 1200,
+    price: 1300,
     open: 0,
     topics: [
       "Introduction to pull/push DP",
@@ -222,8 +238,8 @@ export const GoldCourses = [
 export const AIFutureCourses = [
   {
     cname: "Course 500: Introduction to Machine Learning",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "9+ Grade",
     mode: "Online",
@@ -239,8 +255,8 @@ export const AIFutureCourses = [
   },
   {
     cname: "Course 501: Deep Learning with PyTorch",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "9+ Grade",
     mode: "Online",
@@ -259,13 +275,13 @@ export const AIFutureCourses = [
 
 export const FastLaneCourses = [
   {
-    cname: "Course 600: Intern Foundation Preparation I",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    cname: "Course 600V: Intern Foundation Preparation I",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "10+ Grade",
     mode: "Online",
-    price: 2000,
+    price: 1500,
     open: 1,
     topics: [
       "Introduction to internship preparation I",
@@ -276,13 +292,49 @@ export const FastLaneCourses = [
     ],
   },
   {
-    cname: "Course 601: Intern Handson Project Preparation II",
-    duration: "12 Weeks",
-    dates: "September 14th - November 30th",
+    cname: "Course 600P: Intern Foundation Preparation I",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
+    lang: "Python",
+    class: "10+ Grade",
+    mode: "In Person",
+    price: 3000,
+    open: 1,
+    topics: [
+      "Introduction to internship preparation I",
+      "Module 1: Review of Python",
+      "Module 2: Review of machine learning",
+      "Module 3: Review of deep learning",
+      "Practical projects combining all skills",
+    ],
+  },
+  {
+    cname: "Course 601V: Intern Handson Project Preparation II",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
     lang: "Python",
     class: "10+ Grade",
     mode: "Online",
-    price: 2000,
+    price: 1500,
+    open: 0,
+    topics: [
+      "Internship project preparation",
+      "Module 1: Comprehensive Python Review",
+      "Module 2: Business Projects",
+      "Module 3: Science Projects",
+      "Module 4: Math and Statistics Projects",
+      "Module 5: Machine Learning Projects",
+      "Module 6: Medical Projects",
+    ],
+  },
+  {
+    cname: "Course 601P: Intern Handson Project Preparation II",
+    duration: "13 Weeks",
+    dates: "September 1st - November 30th",
+    lang: "Python",
+    class: "10+ Grade",
+    mode: "In Person",
+    price: 3000,
     open: 0,
     topics: [
       "Internship project preparation",
@@ -300,8 +352,8 @@ export const FallCourses = {
   "Python Courses": [
     {
       cname: "Course 100: Introduction to Python Programming",
-      duration: "12 Weeks",
-      dates: "September 14th - November 30th",
+      duration: "13 Weeks",
+      dates: "September 1st - November 30th",
       lang: "Python",
       class: "5+ Grade",
       mode: "Online",
@@ -316,8 +368,8 @@ export const FallCourses = {
     },
     {
       cname: "Course 101: Algorithms and Data Structures in Python",
-      duration: "12 Weeks",
-      dates: "September 14th - November 30th",
+      duration: "13 Weeks",
+      dates: "September 1st - November 30th",
       lang: "Python",
       class: "5+ Grade",
       mode: "Online",
@@ -334,8 +386,8 @@ export const FallCourses = {
   "USACO—USACO Bronze Knowledge": [
     {
       cname: "Course 200: Problem Decomposition with Iteration & Recursion",
-      duration: "12 Weeks",
-      dates: "September 14th - November 30th",
+      duration: "13 Weeks",
+      dates: "September 1st - November 30th",
       lang: "Python",
       class: "6+ Grade",
       mode: "Online",
@@ -353,8 +405,8 @@ export const FallCourses = {
   "Intern Fastlane Courses": [
     {
       cname: "Course 600: Intern Foundation Preparation I",
-      duration: "12 Weeks",
-      dates: "September 14th - November 30th",
+      duration: "13 Weeks",
+      dates: "September 1st - November 30th",
       lang: "Python",
       class: "10+ Grade",
       mode: "Online",
