@@ -7,20 +7,18 @@ import { updateUser } from "../redux/user/userSlice";
 import { Transition } from "@headlessui/react";
 
 const NavBar = () => {
-  const user = useSelector((state) => state.user.role);
+  const user = useSelector((state) => state.user.id);
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [isOpen, setIsOpen] = useState(false);
 
   const logOut = () => {
     const ob = {
-      role: "",
       id: 0,
       fname: "",
       lname: "",
       email: "",
       phone: "",
-      about: "",
     };
     dispatch(updateUser(ob));
     navigate("/logout");
@@ -88,11 +86,11 @@ const NavBar = () => {
                     </NavLink>
                   </>
                 ) : (
-                  // <NavLink to="/login">
-                    <button disabled className="mr-8 ml-8 bg-[#94d768] text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-8 border-2 border-[#1f901c] rounded-full font-mono font-extrabold cursor-not-allowed">
+                  <NavLink to="/login">
+                    <button className="mr-8 ml-8 bg-[#94d768] text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-8 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                       Login
                     </button>
-                  // </NavLink>
+                  </NavLink>
                 )}
               </div>
             </div>
@@ -214,7 +212,7 @@ const NavBar = () => {
                 >
                   Contact Us
                 </NavLink>
-                {/* <NavLink
+                <NavLink
                   onClick={() => setIsOpen(!isOpen)}
                   style={({ isActive }) => {
                     return {
@@ -226,7 +224,7 @@ const NavBar = () => {
                   className="text-black hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
                 >
                   Login / Register
-                </NavLink> */}
+                </NavLink>
               </div>
             </div>
           )}
