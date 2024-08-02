@@ -64,7 +64,7 @@ const Login = () => {
       } else if (response.data.code === 2) {
         NotificationManager.error("Email not verified.");
         setReqVerification(true);
-      }
+      } 
       else{
         NotificationManager.error("Invalid Credentials");
       }
@@ -89,13 +89,17 @@ const Login = () => {
 
     try {
       if (validatePassword(password, confirmPassword)) {
-        const response = await axios.post("http://127.0.0.1:5000/register", {
-          email,
-          password,
-          fname,
-          lname,
-          phone,
-        });
+        const response = await axios.post(
+          "http://127.0.0.1:5000/register",
+          {
+            email,
+            password,
+            fname,
+            lname,
+            phone,
+          },
+          { withCredentials: true }
+        );
         if (response.data.code === 200) {
           NotificationManager.success("Registration Successful");
           console.log(response.data);
