@@ -1,27 +1,132 @@
 import React, { useState } from "react";
 import { NotificationManager } from "react-notifications";
-import { useNavigate } from 'react-router-dom';
-
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import axios from "axios";
+import { updateUser } from "../redux/user/userSlice";
 
 const Login = () => {
   const [logintab, setLoginTab] = useState("login");
   const navigate = useNavigate();
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [reqVerification, setReqVerification] = useState(false);
+  const dispatch = useDispatch();
+
+  const handlePasswordChange = (event) => {
+    const newPassword = event.target.value;
+    setPassword(newPassword);
+  };
+
+  const handleConfirmPasswordChange = (event) => {
+    const newConfirmPassword = event.target.value;
+    setConfirmPassword(newConfirmPassword);
+  };
+
+  const validatePassword = (newPassword, newConfirmPassword) => {
+    if (!(newPassword === newConfirmPassword)) {
+      NotificationManager.warning("Passwords do not match. Please try again.");
+      return false;
+    }
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/;
+    var val = passwordRegex.test(newPassword);
+    if (!val) {
+      NotificationManager.warning(
+        "Password must be at least 6 characters long and contain at least one digit."
+      );
+      return false;
+    }
+    return true;
+  };
 
   const signIn = async (e) => {
     e.preventDefault();
     console.log(e.target.email.value);
     console.log(e.target.password.value);
-    NotificationManager.success("Sign In successful");
-    navigate('/');
-    e.target.reset();
+    var email = e.target.email.value;
+    var password = e.target.password.value;
+
+    try {
+      const response = await axios.post("http://127.0.0.1:5000/login", {
+        email,
+        password,
+      });
+      console.log(response.data.status);
+      if (response.data.status === "success") {
+        NotificationManager.success("Sign In successful");
+        console.log(response.data);
+        const ob = {
+          id: response.data.uid,
+        };
+        dispatch(updateUser(ob));
+        navigate("/");
+        e.target.reset();
+      } else if (response.data.code === 2) {
+        NotificationManager.error("Email not verified.");
+        setReqVerification(true);
+      } 
+      else{
+        NotificationManager.error("Invalid Credentials");
+      }
+    } catch (error) {
+      NotificationManager.error("Invalid Credentials");
+    }
   };
 
   const registerStudent = async (e) => {
     e.preventDefault();
     console.log(e.target.regemail.value);
-    NotificationManager.success("Registration Successful");
-    navigate('/login');
-    e.target.reset();
+    const email = e.target.regemail.value;
+    const password = e.target.password.value;
+    const fname = e.target.fname.value;
+    const lname = e.target.lname.value;
+
+    var phone = e.target.phone.value;
+    if (!phone) {
+      phone = 0;
+    }
+    console.log(e.target.fname.value);
+
+    try {
+      if (validatePassword(password, confirmPassword)) {
+        const response = await axios.post(
+          "http://127.0.0.1:5000/register",
+          {
+            email,
+            password,
+            fname,
+            lname,
+            phone,
+          },
+          { withCredentials: true }
+        );
+        if (response.data.code === 200) {
+          NotificationManager.success("Registration Successful");
+          console.log(response.data);
+          setLoginTab("login");
+          NotificationManager.info(
+            "Verification email has been sent to " +
+              email +
+              ". Please verify your email address to continue."
+          );
+          console.log("heellelelelelelel");
+          setConfirmPassword("");
+          setPassword("");
+        } else {
+          NotificationManager.error(
+            "Email already exists. Please use a different email."
+          );
+        }
+      }
+    } catch (error) {
+      NotificationManager.error("Registration Failed; Try again");
+      // console.error(error.response.data);
+      // e.target.reset();
+    }
+    // navigate('/login');
+    // e.target.reset();
+    // setConfirmPassword('');
+    // setPassword('');
   };
 
   return (
@@ -37,7 +142,9 @@ const Login = () => {
             <div className="flex border-2 rounded-full border-[#94d768] text-center">
               {logintab === "login" ? (
                 <div className="border-r-2 py-3 px-8 pl-10 border-[#94d768] md:w-48 bg-[#94d768] rounded-l-full">
-                  <h1 className="pr-2 md:text-2xl font-mono font-bold">Login</h1>
+                  <h1 className="pr-2 md:text-2xl font-mono font-bold">
+                    Login
+                  </h1>
                 </div>
               ) : (
                 <div
@@ -126,11 +233,17 @@ const Login = () => {
                     <div>
                       <button
                         type="submit"
-                        className="bg-[#94d768] text-xl hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
+                        className="bg-[#94d768] mt-2 text-xl hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
                       >
                         Sign in
                       </button>
                     </div>
+
+                    {reqVerification && (
+                      <p className="text-serif text-xl text-[#21811d] underline cursor-pointer underline-offset-4">
+                        Send new verification link
+                      </p>
+                    )}
                   </form>
                 </div>
               </div>
@@ -153,7 +266,7 @@ const Login = () => {
                       </label>
                       <div className="mt-2">
                         <input
-                        required
+                          required
                           id="regemail"
                           name="registeremail"
                           type="email"
@@ -173,7 +286,7 @@ const Login = () => {
                         </label>
                         <div className="mt-2">
                           <input
-                          required
+                            required
                             id="fname"
                             name="fname"
                             type="text"
@@ -192,7 +305,7 @@ const Login = () => {
                         </label>
                         <div className="mt-2">
                           <input
-                          required
+                            required
                             id="lname"
                             name="lname"
                             type="name"
@@ -214,35 +327,59 @@ const Login = () => {
                       </div>
                       <div className="mt-2">
                         <input
-                        required
+                          required
                           id="password"
                           name="password"
                           type="password"
                           autoComplete="current-password"
+                          value={password}
+                          onChange={handlePasswordChange}
                           className="block px-3 font-mono font-bold text-[#727272] w-full rounded-md border-0 py-1.5  shadow-sm ring-2 ring-inset ring-[#94d768] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#94d768] sm:text-sm sm:leading-6"
                         />
                       </div>
                     </div>
 
                     <div>
+                      <div className="flex items-center justify-between">
                         <label
-                          htmlFor="phone"
-                          className="block text-lg font-bold font-serif leading-6 text-[#21811d]"
+                          htmlFor="password"
+                          className="block text-lg font-serif font-bold leading-6 text-[#21811d]"
                         >
-                          Phone Number (+1)
+                          Confirm Password{" "}
+                          <span className="text-red-700">*</span>
                         </label>
-                        <div className="mt-2">
-                          <input
-                          
-                            id="phone"
-                            name="phone"
-                            type="tel"
-                            autoComplete="tel"
-                            pattern="[0-9]{10}"
-                            className="block w-full px-3 font-mono font-bold text-[#727272] rounded-md border-0 py-1.5  shadow-sm ring-2 ring-inset ring-[#94d768] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#94d768] sm:text-sm sm:leading-6"
-                          />
-                        </div>
                       </div>
+                      <div className="mt-2">
+                        <input
+                          required
+                          id="confirmpassword"
+                          name="confirmpassword"
+                          type="password"
+                          value={confirmPassword}
+                          onChange={handleConfirmPasswordChange}
+                          className="block px-3 font-mono font-bold text-[#727272] w-full rounded-md border-0 py-1.5  shadow-sm ring-2 ring-inset ring-[#94d768] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#94d768] sm:text-sm sm:leading-6"
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="phone"
+                        className="block text-lg font-bold font-serif leading-6 text-[#21811d]"
+                      >
+                        Phone Number (+1)
+                      </label>
+                      <div className="mt-2">
+                        <input
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          autoComplete="tel"
+                          pattern="[0-9]{10}"
+                          className="block w-full px-3 font-mono font-bold text-[#727272] rounded-md border-0 py-1.5  shadow-sm ring-2 ring-inset ring-[#94d768] placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-[#94d768] sm:text-sm sm:leading-6"
+                        />
+                      </div>
+                    </div>
 
                     <div>
                       <button

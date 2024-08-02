@@ -37,12 +37,12 @@ const Home = () => {
             </h1>
 
             <div className="hidden md:block">
-              <NavLink to="/courses">
+              <NavLink to="/login">
                 <button class="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                   Enroll Now
                 </button>
               </NavLink>
-              <NavLink to="/courses">
+              <NavLink to="/login">
                 <button class="bg-[#94d768] text-xl hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                   Start Learning Today
                 </button>
@@ -50,12 +50,12 @@ const Home = () => {
             </div>
 
             <div className="md:hidden">
-              <NavLink to="/courses">
+              <NavLink to="/login">
                 <button class="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                   Enroll Now
                 </button>
               </NavLink>
-              <NavLink to="/courses">
+              <NavLink to="/login">
                 <button class="bg-[#94d768] text-xl hover:bg-[#94d76800] mt-4 text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                   Start Learning Today
                 </button>
@@ -276,8 +276,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-
-        
 
         <div className="pt-8 md:pt-24">
           <div className="flex flex-col items-center ">
