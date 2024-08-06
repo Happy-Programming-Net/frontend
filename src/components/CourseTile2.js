@@ -7,7 +7,6 @@ import {
 } from "@heroicons/react/24/solid";
 import { useDispatch } from "react-redux"
 import { addCourse } from "../redux/courses/courseSlice";
-import { NotificationManager } from "react-notifications";
 
 const customStyles = {
   content: {
@@ -21,7 +20,7 @@ const customStyles = {
   },
 };
 
-const CourseTile = (props) => {
+const CourseTile2 = (props) => {
   let subtitle;
   const [modalIsOpen, setIsOpen] = useState(false);
   const [reg, setReg] = useState(false);
@@ -43,7 +42,6 @@ const CourseTile = (props) => {
     if(!reg){
       dispatch(addCourse(props.data))
       console.log(props.data)
-      NotificationManager.success("Registration successful");
     }
     
     setReg(true)
@@ -81,21 +79,6 @@ const CourseTile = (props) => {
                 </li>
               </ul>
             </div>
-            <div className="flex flex-col justify-between h-full">
-              {props.data.open === 1 ? (
-                <p className="mb-10 font-sans bg-[#8be988] p-1 font-semibold rounded-full px-3 text-base">
-                  Registrations Open
-                </p>
-              ) : (
-                <p className="mb-10 font-sans bg-[#f66565] p-1 font-semibold rounded-full px-3 text-base">
-                  Registrations Closed
-                </p>
-              )}
-
-              <h1 className="text-6xl font-sans text-[#21811d] font-bold">
-                ${props.data.price}
-              </h1>
-            </div>
           </div>
         </div>
         <Modal
@@ -129,28 +112,6 @@ const CourseTile = (props) => {
                     referrerpolicy="strict-origin-when-cross-origin"
                     className="rounded-2xl md:w-[750px] md:h-[450px] h-56 w-[350px]"
                   ></iframe>
-                  <div className="text-center mt-7 mb-7">
-                    {props.data.open === 1 ? (
-                      <button
-                        href="https://docs.google.com/forms/d/e/1FAIpQLScIqCLD78lfgnJ4n9KbkKtoL_f1tummqCSok_2zyOdvK6yz0w/viewform"
-                        className="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={regCourse}
-                      >
-                        {reg ? (<> Enrolled</>):(<>Enroll Now</>)}
-                      </button>
-                    ) : (
-                      <h1
-                        href="https://docs.google.com/forms/d/e/1FAIpQLScIqCLD78lfgnJ4n9KbkKtoL_f1tummqCSok_2zyOdvK6yz0w/viewform"
-                        className="mr-8 ml-2 text-xl  text-gray-500 py-3 px-6 border-2 border-gray-500 rounded-full cursor-not-allowed font-mono font-extrabold"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Registrations Closed
-                      </h1>
-                    )}
-                  </div>
                 </div>
 
                 <div className="basis-1/3 pr-8">
@@ -175,13 +136,7 @@ const CourseTile = (props) => {
                     </ol>
                   </div>
 
-                  <div className="text-left text-[#21811d] pt-4 pb-3">
-                    <span className="font-bold text-3xl text-[#21811d]">
-                      ${props.data.price}
-                    </span>
-                    <span className="text-3xl font-bold">&nbsp;USD</span>{" "}
-                    <span className="font-bold text-xl">/ session</span>
-                  </div>
+                  
 
                   <hr className="" />
 
@@ -220,35 +175,6 @@ const CourseTile = (props) => {
                 </div>
               </div>
               <hr />
-              <div className="text-center pt-5">
-                <h1 className="font-bold text-2xl text-[#21811d]">
-                  Course Details -
-                </h1>
-                <div className="md:w-2/4 w-3/4 mx-auto text-lg font-semibold text-start text-gray-600 font-serif pt-4 pb-8">
-                  <ol className="list-decimal">
-                    <li>
-                      Early bird will get $50 off, if register by 4/1/2024.
-                    </li>
-                    <li className="text-[#21811d]">
-                      Sibling or multiple registration group discount:{" "}
-                    </li>
-                    <ul className="list-disc text-[#21811d]">
-                      <li>2 students: $50 off.</li>
-                      <li> 3+ students: $100 off</li>
-                    </ul>
-                    <li>
-                      {" "}
-                      This camp is designed for students with different
-                      background, everybody is welcome!{" "}
-                    </li>
-                    <li>
-                      Location: our camp location is close to Longfellow Middle
-                      school, 0.3 miles away. Falls Church, VA 22043.{" "}
-                    </li>
-                    <li> Each session is limited to 10 students!</li>
-                  </ol>
-                </div>
-              </div>
             </div>
           </div>
         </Modal>
@@ -257,4 +183,4 @@ const CourseTile = (props) => {
   );
 };
 
-export default CourseTile;
+export default CourseTile2;

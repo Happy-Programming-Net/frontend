@@ -97,8 +97,7 @@ const Login = () => {
             fname,
             lname,
             phone,
-          },
-          { withCredentials: true }
+          }
         );
         if (response.data.code === 200) {
           NotificationManager.success("Registration Successful");

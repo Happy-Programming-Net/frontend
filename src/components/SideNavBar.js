@@ -3,7 +3,7 @@ import {
   HomeIcon,
   BookOpenIcon,
   ChatBubbleBottomCenterTextIcon,
-  // ChartBarIcon,
+  ChartBarIcon,
   // UserIcon,
   PlusIcon,
 } from "@heroicons/react/24/solid";
@@ -13,6 +13,8 @@ import { useSelector } from "react-redux";
 const SideNavbar = () => {
   const location = useLocation();
   const user = useSelector((state) => state.user.role);
+  const uid = useSelector((state) => state.user.id);
+  
   return (
     <>
       <div
@@ -68,6 +70,29 @@ const SideNavbar = () => {
             </div>
           )}
         </NavLink>
+
+        {
+          uid > 0 && <NavLink to="/dashboard">
+          {location.pathname === "/dashboard" ? (
+            <div className="flex items-center">
+              <div className="bg-[#94d768] flex flex-col justify-center text-center items-center p-3 border rounded-3xl h-32 w-28">
+                <ChartBarIcon className="h-12 w-12 text-[#7dce47] bg-[#ffffff85] rounded-full p-2" />
+                <h1 className="pt-1 text-[#21811d] font-extrabold">
+                  Dashboard
+                </h1>
+              </div>
+              <div className="relative right-3">
+                <div className="h-5 w-5 bg-[#94d768] rounded-sm rotate-45"></div>
+              </div>
+            </div>
+          ) : (
+            <div className="hover:border-2 hover:border-[#94d768a1] flex flex-col justify-center text-center items-center p-3 border rounded-3xl h-32 w-28">
+              <ChartBarIcon className="h-12 w-12 text-orange-500 bg-[#f9751629] rounded-full p-2" />
+              <h1 className="pt-1 font-semibold">Dashboard</h1>
+            </div>
+          )}
+        </NavLink>
+        }
 
         {/* <NavLink to="/dashboard">
           {location.pathname === "/dashboard" ? (
