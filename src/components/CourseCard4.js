@@ -35,25 +35,25 @@ const CourseCard4 = (props) => {
 
   return (
     <>
-      <div class="flex flex-col h-[520px] w-96 border-[3px] border-[#21851d31] rounded-3xlshadow shadow-slate-950/5 rounded-2xl overflow-hidden">
+      <div className="flex flex-col h-[520px] w-96 border-[3px] border-[#21851d31] rounded-3xlshadow shadow-slate-950/5 rounded-2xl overflow-hidden">
         <img
-          class="object-cover h-48 w-full"
+          className="object-cover h-48 w-full"
           src={require("../assets/courses/py3.png")}
           width="304"
           height="192"
           alt="Course 01"
         />
-        <div class="flex-1 flex flex-col p-6">
-          <div class="flex-1">
-            <header class="mb-2">
-              <h2 class="text-xl font-extrabold leading-snug">
+        <div className="flex-1 flex flex-col p-6">
+          <div className="flex-1">
+            <header className="mb-2">
+              <h2 className="text-xl font-extrabold leading-snug">
                 <a
-                  class="text-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
+                  className="text-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
                   href="#0"
                 >
                   2024 Summer <span className="text-[#37ae33]">Code Math{" "}</span> 
                   <span className="underline underline-offset-2">
-                    Online Class
+                    Online className
                   </span>{" "}
                   (4-6th grade)
                 </a>
@@ -82,6 +82,7 @@ const CourseCard4 = (props) => {
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
+          ariaHideApp={false}
         >
           <div
             ref={(_subtitle) => (subtitle = _subtitle)}
@@ -94,7 +95,7 @@ const CourseCard4 = (props) => {
               x
             </h1>
             <h1 className="text-center md:text-4xl text-[#21811d] font-bold font-mono uppercase">
-              2024 Summer <span className="underline underline-offset-4">Code Math</span> Online Class (4-6th grade)
+              2024 Summer <span className="underline underline-offset-4">Code Math</span> Online className (4-6th grade)
             </h1>
             <div className="overflow-y-auto ttt">
               <div className="flex md:flex-row flex-col text-center mt-8 pb-3">
@@ -102,9 +103,8 @@ const CourseCard4 = (props) => {
                   <iframe
                     src="https://www.youtube.com/embed/88kCqAB148U?si=oT-HdFpll7lDKW_"
                     title="YouTube video player"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-                    referrerpolicy="strict-origin-when-cross-origin"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     className="rounded-2xl md:w-[750px] md:h-[450px] h-56 w-[350px]"
                   ></iframe>
                   <div className="text-center mt-7 mb-10 md:mb-0">
@@ -179,9 +179,9 @@ const CourseCard4 = (props) => {
                       <li>2 students: $25 off.</li>
                       <li> 3+ students: $50 off</li>
                     </ul>
-                    <li> We will use Zoom for online class.</li>
+                    <li> We will use Zoom for online className.</li>
                     <li>
-                      Beginner 2 class is the continuation of class beginner 1.
+                      Beginner 2 className is the continuation of className beginner 1.
                       We suggest students register both two sessions, in order
                       to have a full understanding of Python.
                     </li>

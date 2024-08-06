@@ -35,20 +35,20 @@ const CourseCard2 = (props) => {
 
   return (
     <>
-      <div class="flex flex-col h-[520px] w-96 border-[3px] border-[#21851d31] rounded-3xlshadow shadow-slate-950/5 rounded-2xl overflow-hidden">
+      <div className="flex flex-col h-[520px] w-96 border-[3px] border-[#21851d31] rounded-3xlshadow shadow-slate-950/5 rounded-2xl overflow-hidden">
         <img
-          class="object-cover h-48 w-full"
+          className="object-cover h-48 w-full"
           src={require("../assets/courses/python.png")}
           width="304"
           height="192"
           alt="Course 01"
         />
-        <div class="flex-1 flex flex-col p-6">
-          <div class="flex-1">
-            <header class="mb-2">
-              <h2 class="text-xl font-extrabold leading-snug">
+        <div className="flex-1 flex flex-col p-6">
+          <div className="flex-1">
+            <header className="mb-2">
+              <h2 className="text-xl font-extrabold leading-snug">
                 <a
-                  class="text-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
+                  className="text-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
                   href="#0"
                 >
                   2024 Summer{" "}
@@ -82,6 +82,7 @@ const CourseCard2 = (props) => {
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
           style={customStyles}
+          ariaHideApp={false}
           contentLabel="Example Modal"
         >
           <div
@@ -105,9 +106,8 @@ const CourseCard2 = (props) => {
                   <iframe
                     src="https://www.youtube.com/embed/88kCqAB148U?si=oT-HdFpll7lDKW_"
                     title="YouTube video player"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-                    referrerpolicy="strict-origin-when-cross-origin"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     className="rounded-2xl md:w-[750px] md:h-[450px] h-56 w-[350px]"
                   ></iframe>
                   <div className="text-center mt-7 mb-10 md:mb-0">

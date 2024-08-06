@@ -37,26 +37,26 @@ const Home = () => {
             </h1>
 
             <div className="hidden md:block">
-              <NavLink to="/login">
-                <button class="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+              <NavLink to="/courses">
+                <button className="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                   Enroll Now
                 </button>
               </NavLink>
-              <NavLink to="/login">
-                <button class="bg-[#94d768] text-xl hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+              <NavLink to="/courses">
+                <button className="bg-[#94d768] text-xl hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                   Start Learning Today
                 </button>
               </NavLink>
             </div>
 
             <div className="md:hidden">
-              <NavLink to="/login">
-                <button class="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+              <NavLink to="/courses">
+                <button className="mr-8 ml-2 text-xl hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                   Enroll Now
                 </button>
               </NavLink>
-              <NavLink to="/login">
-                <button class="bg-[#94d768] text-xl hover:bg-[#94d76800] mt-4 text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+              <NavLink to="/courses">
+                <button className="bg-[#94d768] text-xl hover:bg-[#94d76800] mt-4 text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                   Start Learning Today
                 </button>
               </NavLink>
@@ -109,13 +109,13 @@ const Home = () => {
 
           <div className="flex md:flex-row flex-col justify-evenly items-center">
             <NavLink to="/courses">
-              <div class="rounded-3xl relative group w-[350px] mb-12 md:mb-0">
+              <div className="rounded-3xl relative group w-[350px] mb-12 md:mb-0">
                 <img
                   src={require(`../assets/explore/python.png`)}
                   alt=""
                   className="rounded-3xl h-[450px] w-[350px]"
                 />
-                <div class="md:shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
+                <div className="md:shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
                   <div className="pt-6">
                     <h1 className="py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center">
                       Python
@@ -138,20 +138,20 @@ const Home = () => {
             </NavLink>
 
             <NavLink to="/courses">
-              <div class="rounded-3xl relative group w-[350px] mb-12 md:mb-0">
+              <div className="rounded-3xl relative group w-[350px] mb-12 md:mb-0">
                 <img
                   src={require(`../assets/explore/web.png`)}
                   alt=""
                   className="rounded-3xl h-[450px] w-[350px]"
                 />
-                <div class="shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
+                <div className="shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
                   <div className="pt-6">
                     <h1 className="py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center">
                       Algorithms*
                     </h1>
                   </div>
                 </div>
-                <div class="shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
+                <div className="shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
                   <div className="pt-6">
                     <h1 className="py-2 text-4xl font-bold font-serif">
                       Algorithms
@@ -170,20 +170,20 @@ const Home = () => {
             </NavLink>
 
             <NavLink to="/courses">
-              <div class="rounded-3xl relative group w-[350px] mb-12 md:mb-0">
+              <div className="rounded-3xl relative group w-[350px] mb-12 md:mb-0">
                 <img
                   src={require(`../assets/explore/data.png`)}
                   alt=""
                   className="rounded-3xl h-[450px] w-[350px]"
                 />
-                <div class="shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
+                <div className="shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0">
                   <div className="pt-6">
                     <h1 className="py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center">
                       Data Science*
                     </h1>
                   </div>
                 </div>
-                <div class="shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
+                <div className="shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4">
                   <div className="pt-6">
                     <h1 className="py-2 text-4xl font-bold font-serif">
                       Data Science
@@ -227,14 +227,14 @@ const Home = () => {
 
           <div className="flex md:flex-row flex-col justify-evenly items-center">
             <div className="md:h-96 w-96 md:bg-white rounded-2xl p-4 md:shadow-lg md:hover:shadow-2xl md:mb-0">
-              <figure class="rounded-2xl md:h-96 md:w-96 bg-white p-6 md:shadow-lg ring-1 ring-gray-900/5">
+              <figure className="rounded-2xl md:h-96 md:w-96 bg-white p-6 md:shadow-lg ring-1 ring-gray-900/5">
                 <UserIcon className="h-24 w-24 text-[#7dce47] bg-[#ffffff85] rounded-full p-2" />
                 <h1 className="p-2 text-2xl font-bold font-serif">
                   Small Classroom Setting
                 </h1>
-                <blockquote class="text-gray-900 p-2">
+                <blockquote className="text-gray-900 p-2">
                   <p className="text-lg font-serif font-medium">
-                    In a small class, students benefit from personalized
+                    In a small className, students benefit from personalized
                     attention and interactive learning experiences, allowing for
                     in-depth discussions and a supportive educational
                     environment.
@@ -244,12 +244,12 @@ const Home = () => {
             </div>
 
             <div className="md:h-96 w-96 md:bg-white rounded-2xl p-4 md:shadow-lg md:hover:shadow-2xl md:mb-0">
-              <figure class="rounded-2xl md:h-96 md:w-96 bg-white p-6 md:shadow-lg ring-1 ring-gray-900/5">
+              <figure className="rounded-2xl md:h-96 md:w-96 bg-white p-6 md:shadow-lg ring-1 ring-gray-900/5">
                 <CommandLineIcon className="h-24 w-24 text-[#7dce47] bg-[#ffffff85] rounded-full p-2" />
                 <h1 className="p-2 text-2xl font-bold font-serif">
                   Beginner-Friendly Classroom Environment
                 </h1>
-                <blockquote class="text-gray-900 p-2">
+                <blockquote className="text-gray-900 p-2">
                   <p className="text-lg font-serif font-medium">
                     Experienced educators and software developers create an
                     interactive, beginner-friendly environment that fosters
@@ -260,12 +260,12 @@ const Home = () => {
             </div>
 
             <div className="md:h-96 w-96 md:bg-white rounded-2xl p-4 md:shadow-lg md:hover:shadow-2xl md:mb-0">
-              <figure class="rounded-2xl md:h-96 md:w-96 bg-white p-6 md:shadow-lg ring-1 ring-gray-900/5">
+              <figure className="rounded-2xl md:h-96 md:w-96 bg-white p-6 md:shadow-lg ring-1 ring-gray-900/5">
                 <AcademicCapIcon className="h-24 w-24 text-[#7dce47] bg-[#ffffff85] rounded-full p-2" />
                 <h1 className="p-2 text-2xl font-bold font-serif">
                   Bridging Academia with Industry
                 </h1>
-                <blockquote class="text-gray-900 p-2">
+                <blockquote className="text-gray-900 p-2">
                   <p className="text-lg font-serif font-medium">
                     Professors with high academic standards collaborate with
                     industry experts, offering a certificate upon course
@@ -296,18 +296,16 @@ const Home = () => {
           <iframe
             src="https://www.youtube.com/embed/nI9qusVo4lA?si=SIfyPLS4b63QSG7x"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-            referrerpolicy="strict-origin-when-cross-origin"
+            referrerPolicy="strict-origin-when-cross-origin"
             className="hidden md:block rounded-2xl mx-auto md:h-[450px] md:w-[750px]"
           ></iframe>
 
           <iframe
             src="https://www.youtube.com/embed/nI9qusVo4lA?si=SIfyPLS4b63QSG7x"
             title="YouTube video player"
-            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-            referrerpolicy="strict-origin-when-cross-origin"
+            referrerPolicy="strict-origin-when-cross-origin"
             className="md:hidden rounded-lg md:rounded-2xl mx-auto h-[250px] w-[375px]"
           ></iframe>
 

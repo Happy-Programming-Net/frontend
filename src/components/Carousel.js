@@ -37,13 +37,13 @@ const Carousel = () => {
                   Elevate Your Learning Experience with Us
                 </h1>
                 <div className="hidden md:block">
-                  <NavLink to="/login">
-                    <button class="mr-8 ml-2 text-lg hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+                  <NavLink to="/courses">
+                    <button className="mr-8 ml-2 text-lg hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                       Enroll Now
                     </button>
                   </NavLink>
-                  <NavLink to="/login">
-                    <button class="bg-[#94d768] text-lg hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
+                  <NavLink to="/courses">
+                    <button className="bg-[#94d768] text-lg hover:bg-[#94d76800] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-mono font-extrabold">
                       Start Learning Today
                     </button>
                   </NavLink>
@@ -107,7 +107,7 @@ const Carousel = () => {
                   </ul>
 
                   <NavLink to="/courses">
-                    <button class="mr-8 ml-2 text-lg hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-serif font-extrabold">
+                    <button className="mr-8 ml-2 text-lg hover:bg-[#94d768] text-[#21811d] py-3 px-6 border-2 border-[#1f901c] rounded-full font-serif font-extrabold">
                       Enroll Now
                     </button>
                   </NavLink>
@@ -155,7 +155,7 @@ const Carousel = () => {
                   </ul>
 
                   <NavLink to="/courses">
-                    <button class="mr-8 ml-2 text-lg hover:bg-blue-400  text-blue-700 py-3 px-6 border-2 border-blue-700  rounded-full font-serif font-extrabold">
+                    <button className="mr-8 ml-2 text-lg hover:bg-blue-400  text-blue-700 py-3 px-6 border-2 border-blue-700  rounded-full font-serif font-extrabold">
                       Enroll Now
                     </button>
                   </NavLink>

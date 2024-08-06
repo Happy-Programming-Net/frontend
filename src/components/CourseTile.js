@@ -86,6 +86,7 @@ const CourseTile = (props) => {
           onAfterOpen={afterOpenModal}
           onRequestClose={closeModal}
           style={customStyles}
+          ariaHideApp={false}
           contentLabel="Example Modal"
         >
           <div
@@ -107,9 +108,8 @@ const CourseTile = (props) => {
                   <iframe
                     src="https://www.youtube.com/embed/88kCqAB148U?si=oT-HdFpll7lDKW_"
                     title="YouTube video player"
-                    frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
-                    referrerpolicy="strict-origin-when-cross-origin"
+                    referrerPolicy="strict-origin-when-cross-origin"
                     className="rounded-2xl md:w-[750px] md:h-[450px] h-56 w-[350px]"
                   ></iframe>
                   <div className="text-center mt-7 mb-7">

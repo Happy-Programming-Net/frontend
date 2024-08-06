@@ -160,7 +160,7 @@ const Courses = () => {
                 >
                   <h1 className="text-[#21811d] font-bold">{level} </h1>
                   <svg
-                    class="w-2.5 h-2.5 ml-2.5"
+                    className="w-2.5 h-2.5 ml-2.5"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -168,9 +168,9 @@ const Courses = () => {
                   >
                     <path
                       stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
                       d="m1 1 4 4 4-4"
                     />
                   </svg>
@@ -272,7 +272,7 @@ const Courses = () => {
             <div className="pb-10 mb-10">
               <div className="lg:w-11/12 mx-auto grid lg:grid-cols-1 ttt">
                 {courses.map((cat, ind) => (
-                  <>
+                  <div key={ind}>
                     {level === "Show All" ? (
                       <h1 className="lg:pl-4 pb-4 mt-12 text-4xl text-[#21811d] font-serif uppercase font-extrabold underline underline-offset-[5px]">
                         {Levels[ind + 2]}
@@ -286,7 +286,7 @@ const Courses = () => {
                     {cat.map((cou, ind) => (
                       <CourseTile key={ind} data={cou} />
                     ))}
-                  </>
+                  </div>
                 ))}
               </div>
             </div>
@@ -310,7 +310,7 @@ const Courses = () => {
           <div className="pb-10 mb-10">
             <div className="lg:w-11/12 mx-auto grid lg:grid-cols-1 ttt">
               {Object.keys(FallCourses).map((cat, ind) => (
-                <>
+                <div key={ind}>
                   <h1
                     key={ind}
                     className="lg:pl-4 pb-4 mt-12 text-4xl text-[#21811d] font-serif uppercase font-extrabold underline underline-offset-[5px]"
@@ -320,7 +320,7 @@ const Courses = () => {
                   {FallCourses[cat].map((cour, idx) => (
                     <CourseTile key={idx} data={cour} />
                   ))}
-                </>
+                </div>
               ))}
             </div>
           </div>
