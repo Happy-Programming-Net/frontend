@@ -191,21 +191,27 @@ const CourseCard4 = (props) => {
                 <div className='md:w-2/4 w-3/4 mx-auto text-lg font-semibold text-start text-gray-600 font-serif pt-4 pb-8'>
                   <ol className='list-decimal'>
                     <li>
-                      Early bird will get $50 off, if register by 4/1/2025.
+                      Understand key AI concepts (e.g., machine learning, neural
+                      networks, natural language processing, Feed-Forward Neural
+                      Network, CNN implementation, RNN, time series processing,
+                      Natural Language Processing, ChatGPT & Large Language
+                      Model).
                     </li>
-                    <li className='text-[#21811d]'>
-                      Sibling or multiple registration group discount:{" "}
-                    </li>
-                    <ul className='list-disc text-[#21811d]'>
-                      <li>2 students: $25 off.</li>
-                      <li> 3+ students: $50 off</li>
-                    </ul>
-                    <li> We will use Zoom for online className.</li>
+
                     <li>
-                      Beginner 2 className is the continuation of className
-                      beginner 1. We suggest students register both two
-                      sessions, in order to have a full understanding of Python.
+                      Analyze the role of AI in society, including ethical
+                      implications
                     </li>
+
+                    <li>
+                      Learn the process of academic research: from question
+                      formation to presentation
+                    </li>
+
+                    <lli>
+                      Develop a research project exploring a real-world
+                      AI-related problem
+                    </lli>
                   </ol>
                 </div>
               </div>
