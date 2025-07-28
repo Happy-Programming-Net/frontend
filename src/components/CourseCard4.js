@@ -51,7 +51,7 @@ const CourseCard4 = (props) => {
                   className="text-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
                   href="#0"
                 >
-                  2024 Summer <span className="text-[#37ae33]">Code Math{" "}</span> 
+                  2025 Summer <span className="text-[#37ae33]">Code Math{" "}</span> 
                   <span className="underline underline-offset-2">
                     Online className
                   </span>{" "}
@@ -95,7 +95,7 @@ const CourseCard4 = (props) => {
               x
             </h1>
             <h1 className="text-center md:text-4xl text-[#21811d] font-bold font-mono uppercase">
-              2024 Summer <span className="underline underline-offset-4">Code Math</span> Online className (4-6th grade)
+              2025 Summer <span className="underline underline-offset-4">Code Math</span> Online className (4-6th grade)
             </h1>
             <div className="overflow-y-auto ttt">
               <div className="flex md:flex-row flex-col text-center mt-8 pb-3">
@@ -172,7 +172,7 @@ const CourseCard4 = (props) => {
                 <div className="md:w-2/4 w-3/4 mx-auto text-lg font-semibold text-start text-gray-600 font-serif pt-4 pb-8">
                   <ol className="list-decimal">
                     <li>
-                      Early bird will get $50 off, if register by 4/1/2024.
+                      Early bird will get $50 off, if register by 4/1/2025.
                     </li>
                     <li className="text-[#21811d]">Sibling or multiple registration group discount: </li>
                     <ul className="list-disc text-[#21811d]">
