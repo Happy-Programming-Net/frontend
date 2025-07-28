@@ -152,17 +152,15 @@ const CourseCard4 = (props) => {
                   <div className='text-start text-[#21811d] font-mono text-lg font-bold pt-4'>
                     <h1>
                       {" "}
-                      <span className='font-bold text-2xl'>Session 1: </span>
-                      <span className='text-lg font-bold underline underline-offset-4'>
-                        7/22 - 8/2/24
-                      </span>{" "}
+                      <span className='font-bold text-2xl'>Session: </span>
+                      <span className='text-lg font-bold underline underline-offset-4'></span>{" "}
                     </h1>
 
                     <div className='flex pt-2'>
                       <CalendarDaysIcon className='h-6 w-6 text-[#7dce47]' />
                       <h1 className='text-gray-600 text-base'>
                         {" "}
-                        &nbsp;- 10 Classes
+                        &nbsp;- 14 Weeks
                       </h1>
                     </div>
 
@@ -170,14 +168,14 @@ const CourseCard4 = (props) => {
                       <CalendarIcon className='h-6 w-6 text-[#7dce47]' />
                       <h1 className='text-gray-600 text-base'>
                         {" "}
-                        &nbsp;- Monday to Friday
+                        &nbsp;- Weekend
                       </h1>
                     </div>
                     <div className='flex pt-2'>
                       <ClockIcon className='h-6 w-6 text-[#7dce47]' />
                       <h1 className='text-gray-600 text-base'>
                         {" "}
-                        &nbsp;- 7:00 PM to 8:00 PM EST
+                        &nbsp;- 2 hours
                       </h1>
                     </div>
                   </div>
@@ -194,8 +192,7 @@ const CourseCard4 = (props) => {
                       Understand key AI concepts (e.g., machine learning, neural
                       networks, natural language processing, Feed-Forward Neural
                       Network, CNN implementation, RNN, time series processing,
-                      Natural Language Processing, ChatGPT & Large Language
-                      Model).
+                      ChatGPT & Large Language Model).
                     </li>
 
                     <li>
@@ -208,10 +205,10 @@ const CourseCard4 = (props) => {
                       formation to presentation
                     </li>
 
-                    <lli>
+                    <li>
                       Develop a research project exploring a real-world
                       AI-related problem
-                    </lli>
+                    </li>
                   </ol>
                 </div>
               </div>
