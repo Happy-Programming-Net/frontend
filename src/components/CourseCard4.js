@@ -51,11 +51,11 @@ const CourseCard4 = (props) => {
                   className="text-slate-900 focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300"
                   href="#0"
                 >
-                  2025 Summer <span className="text-[#37ae33]">Code Math{" "}</span> 
+                  All year <span className="text-[#37ae33]">Research Camp{" "}</span> 
                   <span className="underline underline-offset-2">
-                    Online className
+                    In Person / Online
                   </span>{" "}
-                  (4-6th grade)
+                  (10th+ grade)
                 </a>
               </h2>
             </header>
@@ -95,7 +95,7 @@ const CourseCard4 = (props) => {
               x
             </h1>
             <h1 className="text-center md:text-4xl text-[#21811d] font-bold font-mono uppercase">
-              2025 Summer <span className="underline underline-offset-4">Code Math</span> Online className (4-6th grade)
+              All year <span className="underline underline-offset-4">Research Camp</span> In Person / Online (10th+ grade)
             </h1>
             <div className="overflow-y-auto ttt">
               <div className="flex md:flex-row flex-col text-center mt-8 pb-3">
