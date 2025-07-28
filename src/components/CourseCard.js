@@ -81,7 +81,7 @@ const CourseCard = (props) => {
             <div className="flex pt-2">
               <CalendarIcon className="h-6 w-6 text-[#7dce47]" />
               <h1 className=" pl-2 font-serif text-lg">
-                {props.data.date} 2024 @ {props.data.time} EST
+                {props.data.date} 2025 @ {props.data.time} EST
               </h1>
             </div>
           </div>
