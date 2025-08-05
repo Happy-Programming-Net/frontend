@@ -217,11 +217,12 @@ const Home = () => {
 
           <div className='w-10/12 mx-auto pb-12'>
             <h1 className='text-xl leading-relaxed text-justify font-semibold text-[#21811d] border-2 p-4 border-[#21811d] rounded-2xl font-serif'>
-              Our team has two computer science PhDs and one master, including 8
-              years experience teaching college students, and 10+ years
-              experience working for high-tech companies. We are always trying
-              to make the learning experience fun and engaged so that the
-              students could learn useful skills.
+              Our team includes two PhDs and one Master’s degree holder in
+              Computer Science, with a combined 8 years of experience teaching
+              college students and over 10 years working in high-tech
+              industries. We are committed to making the learning experience fun
+              and engaging, ensuring that students gain practical and valuable
+              skills.
             </h1>
           </div>
 
