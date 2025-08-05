@@ -147,14 +147,14 @@ const Home = () => {
                 <div className='shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0'>
                   <div className='pt-6'>
                     <h1 className='py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center'>
-                      Data structures and Algorithms
+                      Data Structures and Algorithms
                     </h1>
                   </div>
                 </div>
                 <div className='shadow-2xl m-4 h-96 rounded-2xl opacity-0 group-hover:opacity-100 duration-300 absolute inset-x-0 bottom-0 flex flex-col text-xl bg-[#ffffffc4] text-black font-semibold px-4'>
                   <div className='pt-6'>
                     <h1 className='py-2 text-4xl font-bold font-serif'>
-                      Data structures and Algorithms
+                      Data Structures and Algorithms
                     </h1>
                     <h1 className='pt-4 text-left p-4'>
                       Learning about algorithms can be important in the fields
