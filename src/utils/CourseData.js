@@ -49,10 +49,10 @@ export const PythonCourses = [
   },
   {
     cname: "Course 102P: Python Hands-on Projects",
-    duration: "13 Weeks",
-    dates: "September 1st - November 30th",
+    duration: "14 Weeks",
+    dates: "September 6 - December 7",
     lang: "Python",
-    class: "5+ Grade",
+    class: "7+ Grade",
     mode: "In Person",
     price: 2000,
     open: 0,
@@ -68,7 +68,7 @@ export const PythonCourses = [
 export const BronzeCourses = [
   {
     cname: "Course 200: Problem Decomposition with Iteration & Recursion",
-    duration: "13 Weeks",
+    duration: "14 Weeks",
     dates: "September 1st - November 30th",
     lang: "Python",
     class: "6+ Grade",
@@ -293,12 +293,12 @@ export const FastLaneCourses = [
   },
   {
     cname: "Course 600P: Intern Foundation Preparation I",
-    duration: "13 Weeks",
-    dates: "September 1st - November 30th",
+    duration: "14 Weeks",
+    dates: "September 6 - December 7",
     lang: "Python",
     class: "10+ Grade",
     mode: "In Person",
-    price: 3000,
+    price: 3100,
     open: 1,
     topics: [
       "Introduction to internship preparation I",
@@ -329,12 +329,12 @@ export const FastLaneCourses = [
   },
   {
     cname: "Course 601P: Intern Handson Project Preparation II",
-    duration: "13 Weeks",
-    dates: "September 1st - November 30th",
+    duration: "14 Weeks",
+    dates: "September 6 - December 7",
     lang: "Python",
     class: "10+ Grade",
     mode: "In Person",
-    price: 3000,
+    price: 3100,
     open: 0,
     topics: [
       "Internship project preparation",
@@ -364,7 +364,7 @@ export const FallCourses = {
         "Basic code debugging",
         "Translating abstract ideas into code",
         "Basic problem-solving with lists and loops",
-      ]
+      ],
     },
     {
       cname: "Course 101: Algorithms and Data Structures in Python",
