@@ -147,7 +147,7 @@ const Home = () => {
                 <div className='shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0'>
                   <div className='pt-6'>
                     <h1 className='py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center'>
-                      Data structures and Algorithms*
+                      Data structures and Algorithms
                     </h1>
                   </div>
                 </div>
@@ -179,7 +179,7 @@ const Home = () => {
                 <div className='shadow-2xl m-4 h-96 rounded-2xl  group-hover:opacity-0 flex flex-col text-xl text-black font-semibold px-4 absolute inset-x-0 bottom-0'>
                   <div className='pt-6'>
                     <h1 className='py-2 text-4xl font-bold font-serif text-black bg-white rounded-xl p-3 text-center'>
-                      AI Research*
+                      AI Research
                     </h1>
                   </div>
                 </div>
