@@ -209,7 +209,7 @@ const CourseTile = (props) => {
                 <div className="md:w-2/4 w-3/4 mx-auto text-lg font-semibold text-start text-gray-600 font-serif pt-4 pb-8">
                   <ol className="list-decimal">
                     <li>
-                      Early bird will get $50 off, if register by 4/1/2024.
+                      Early bird will get $50 off, if register by 4/1/2025.
                     </li>
                     <li className="text-[#21811d]">
                       Sibling or multiple registration group discount:{" "}
