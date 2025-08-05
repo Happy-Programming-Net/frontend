@@ -141,7 +141,7 @@ const CourseCard4 = (props) => {
 
                   <div className='text-left text-[#21811d] pt-4 pb-3'>
                     <span className='font-bold text-3xl text-[#21811d]'>
-                      $3000
+                      $3100
                     </span>
                     <span className='text-3xl font-bold'>&nbsp;USD</span>{" "}
                     <span className='font-bold text-xl'>/session</span>
